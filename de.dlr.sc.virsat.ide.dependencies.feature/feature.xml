@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.dlr.sc.virsat.ide.dependencies.feature"
+      label="VirSat Development IDE Dependencies Feature"
+      version="4.9.0.qualifier"
+      provider-name="DLR (German Aerospace Center)"
+      plugin="de.dlr.sc.virsat.ide.branding.ui"
+      license-feature="de.dlr.sc.virsat.ide.license.feature">
+
+   <description>
+      Feature for delivering the IDE dependencies.
+German Aerospace Center (DLR e.V.)
+Simulation and Software Technology
+   </description>
+
+   <copyright>
+      Copyright 2017
+by German Aerospace Center (DLR e.V.)
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.platform" version="4.7.2.v20171130-0510"/>
+      <import feature="org.eclipse.buildship" version="2.1.2.v20170807-1324"/>
+      <import feature="org.eclipse.e4.core.tools.feature" version="4.7.0.v20170515-1617"/>
+      <import feature="org.eclipse.eclemma.feature" version="3.0.1.201711142128"/>
+      <import feature="org.eclipse.egit" version="4.9.2.201712150930-r"/>
+      <import feature="org.eclipse.egit.mylyn" version="4.9.2.201712150930-r"/>
+      <import feature="org.eclipse.m2e.feature" version="1.8.2.20171007-0217"/>
+      <import feature="org.eclipse.m2e.logback.feature" version="1.8.2.20171007-0217"/>
+      <import feature="org.eclipse.mylyn.bugzilla_feature" version="3.23.1.v20170623-0008"/>
+      <import feature="org.eclipse.mylyn.context_feature" version="3.23.0.v20170414-0629"/>
+      <import feature="org.eclipse.mylyn.gerrit.feature" version="2.14.0.v20170411-2108"/>
+      <import feature="org.eclipse.mylyn.git" version="1.15.0.v20170411-2003"/>
+      <import feature="org.eclipse.mylyn.hudson" version="1.15.0.v20170411-2141"/>
+      <import feature="org.eclipse.mylyn.ide_feature" version="3.23.0.v20170411-2108"/>
+      <import feature="org.eclipse.mylyn.java_feature" version="3.23.0.v20170411-2108"/>
+      <import feature="org.eclipse.mylyn.pde_feature" version="3.23.0.v20170411-2108"/>
+      <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.19.201711172000"/>
+      <import feature="org.eclipse.mylyn.github.feature" version="4.9.0.201710071750-r"/>
+      <import feature="org.eclipse.rap.tools.feature" version="3.4.0.20171204-1016"/>
+      <import feature="org.eclipse.recommenders.mylyn.rcp.feature" version="2.5.0.v20171201-1623"/>
+      <import feature="org.eclipse.recommenders.rcp.feature" version="2.5.0.v20171201-1623"/>
+      <import feature="org.eclipse.recommenders.snipmatch.rcp.feature" version="2.5.0.v20171201-1623"/>
+      <import feature="org.eclipse.swtbot.eclipse" version="2.6.0.201706141832"/>
+      <import feature="org.eclipse.swtbot.eclipse.gef" version="2.6.0.201706141832"/>
+      <import feature="org.eclipse.swtbot.ide" version="2.6.0.201706141832"/>
+      <import feature="org.eclipse.wst.xml_ui.feature" version="3.9.1.v201707252002"/>
+      <import feature="org.eclipse.emf.edapt.recorder.feature" version="1.2.0.201606020942"/>
+      <import feature="org.eclipse.emf.edapt.runtime.feature" version="1.2.2.201705070604"/>
+      <import feature="org.eclipse.jet.core" version="1.1.0.v201006011447-3218s7355358B558B"/>
+      <import feature="org.eclipse.jet.editor" version="1.1.0.v201004271248-20-7w312113372154"/>
+      <import feature="org.eclipse.jet.sdk" version="1.1.1.v201101271243-42186A5NsKEQPHRQeFaJS4A35"/>
+      <import feature="net.sf.eclipsecs" version="8.0.0.201707161819"/>
+      <import feature="de.weingardt.mylyn.gitlab" version="1.6.0"/>
+      <import feature="org.eclipse.emf.sdk" version="2.13.0.v20170609-0928"/>
+      <import feature="org.eclipse.emf.ecore.xcore.sdk" version="1.5.0.v20170613-0242"/>
+      <import feature="org.eclipse.emf.mwe2.language.sdk" version="2.9.1.201705291011"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.12.0.v20170519-1412"/>
+      <import feature="de.dlr.sc.virsat.model.concept.feature" version="4.9.0.qualifier"/>
+      <import feature="de.dlr.sc.overtarget.feature" version="4.9.0.qualifier"/>
+      <import feature="com.github.spotbugs.plugin.eclipse" version="3.1.5.r201806132012-cbbf0a5"/>
+   </requires>
+</feature>

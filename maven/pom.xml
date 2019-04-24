@@ -1,0 +1,322 @@
+<!-- *******************************************************************************
+     * Copyright (c) 2008-2019 German Aerospace Center (DLR), Simulation and Software Technology, Germany.
+     *
+     * This program and the accompanying materials are made available under the
+     * terms of the Eclipse Public License 2.0 which is available at
+     * http://www.eclipse.org/legal/epl-2.0.
+     *
+     * SPDX-License-Identifier: EPL-2.0
+     ******************************************************************************* -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.dlr.sc.virsat</groupId>
+	<artifactId>de.dlr.sc.virsat.ide</artifactId>
+	<version>4.9.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>1.0.0</tycho-version>
+		<maven.resources.version>2.6</maven.resources.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<build.version>4.9.0</build.version>
+		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
+
+		<build.folder.target>builds</build.folder.target>
+		<build.folder.p2>p2</build.folder.p2>
+		<build.folder.bin>bin</build.folder.bin>
+		<build.folder.target.secured>../deploy/secured</build.folder.target.secured>
+		<build.folder.target.unsecured>../deploy/unsecured</build.folder.target.unsecured>
+		<build.folder.target.bin>../builds/${build.folder.bin}</build.folder.target.bin>
+		<build.folder.target.p2>../builds/${build.folder.p2}</build.folder.target.p2>
+		<build.folder.type>test</build.folder.type>
+		<build.file.zip>VirSat_IDE_Test.zip</build.file.zip>
+		<build.deploy.release>false</build.deploy.release>
+
+		<!-- Sonar Code Coverage -->
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
+
+		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
+	    <eclipse.simultaneous.release.name>Oxygen.1 Release (4.7.1)</eclipse.simultaneous.release.name>
+	    <!-- eclipse.simultaneous.release.repository>http://download.eclipse.org/staging/oxygen/</eclipse.simultaneous.release.repository-->
+	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/oxygen/</eclipse.simultaneous.release.repository>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>deployUnsecured</id>
+			<properties>
+				<build.folder.target>${build.folder.target.unsecured}/</build.folder.target>
+				<build.folder.target.bin>${build.folder.target.unsecured}/${build.folder.bin}</build.folder.target.bin>
+				<build.folder.target.p2>${build.folder.target.unsecured}/${build.folder.p2}</build.folder.target.p2>
+			</properties>
+		</profile>
+		<profile>
+			<id>deployBackuped</id>
+			<properties>
+				<build.folder.target>${build.folder.target.secured}</build.folder.target>
+				<build.folder.target.bin>${build.folder.target.secured}/${build.folder.bin}</build.folder.target.bin>
+				<build.folder.target.p2>${build.folder.target.secured}/${build.folder.p2}</build.folder.target.p2>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>development</id>
+			<properties>
+				<build.qualifier>'d'yyyyMMddHHmm</build.qualifier>
+				<build.folder.type>development</build.folder.type>
+				<build.file.win32>VirSat_IDE_Development_Win32.zip</build.file.win32>
+				<build.file.linux>VirSat_IDE_Development_Linux.tar.gz</build.file.linux>
+				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
+				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/1.1.0/25/</p2.repo.overtarget.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>integration</id>
+			<properties>
+				<build.qualifier>'i'yyyyMMddHHmm</build.qualifier>
+				<build.folder.type>integration/</build.folder.type>
+				<build.file.win32>VirSat_IDE_Integration_${build.version}_Win32.zip</build.file.win32>
+				<build.file.linux>VirSat_IDE_Integration_${build.version}_Linux.tar.gz</build.file.linux>
+				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/integration/${build.version}/</p2.repo.virsat.url>
+				<p2.repo.overtarget.id>Overtarget-Feature-Integration</p2.repo.overtarget.id>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/integration/1.1.0/</p2.repo.overtarget.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>release</id>
+			<properties>
+				<build.deploy.release>true</build.deploy.release>
+				<build.qualifier>'r'yyyyMMddHHmm</build.qualifier>
+				<build.folder.type>release/${build.version}/${BUILD_ID}</build.folder.type>
+				<build.file.win32>VirSat_IDE_Release_${build.version}_${BUILD_ID}_Win32.zip</build.file.win32>
+				<build.file.linux>VirSat_IDE_Release_${build.version}_${BUILD_ID}_Linux.tar.gz</build.file.linux>
+				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/79</p2.repo.virsat.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>update-branding-plugins-about.mappings</id>
+			<activation>
+				<file>
+					<exists>${basedir}/about.mappings</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>${maven.resources.version}</version>
+						<executions>
+							<execution>
+								<id>process-about.mappings</id>
+								<phase>prepare-package</phase>
+								<configuration>
+									<outputDirectory>${project.build.directory}</outputDirectory>
+									<overwrite>true</overwrite>
+									<resources>
+										<resource>
+											<directory>${basedir}</directory>
+											<includes>
+												<include>about.mappings</include>
+											</includes>
+											<filtering>true</filtering>
+										</resource>
+									</resources>
+								</configuration>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-packaging-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<configuration>
+							<additionalFileSets>
+								<fileSet>
+									<directory>${project.build.directory}</directory>
+									<includes>
+										<include>about.mappings</include>
+									</includes>
+								</fileSet>
+							</additionalFileSets>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>eclipse-simultaneous-release</id>
+			<layout>p2</layout>
+			<url>${eclipse.simultaneous.release.repository}</url>
+		</repository>
+
+		<repository>
+			<id>license-feature</id>
+			<url>http://download.eclipse.org/cbi/updates/license/</url>
+			<layout>p2</layout>
+		</repository>
+
+		<repository>
+			<id>svn-subversive-feature</id>
+			<url>http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/</url>
+			<layout>p2</layout>
+		</repository>
+
+		<repository>
+			<id>m2t-JET-feature</id>
+			<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
+			<layout>p2</layout>
+		</repository>
+
+		<repository>
+			<id>edapt-feature</id>
+			<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
+			<layout>p2</layout>
+		</repository>
+
+		<repository>
+			<id>gitlab-mylyn-feature</id>
+			<url>https://pweingardt.github.io/mylyn-gitlab/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>checkstyle-feature</id>
+			<url>http://eclipse-cs.sourceforge.net/update/</url>
+			<layout>p2</layout>
+		</repository> 
+		
+		<repository>
+			<id>spotbugs-feature</id>
+			<url>https://spotbugs.github.io/eclipse-latest/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>${p2.repo.virsat.id}</id>
+			<url>${p2.repo.virsat.url}</url>
+			<layout>p2</layout>
+		</repository>
+		
+		<repository>
+			<id>${p2.repo.overtarget.id}</id>
+			<url>${p2.repo.overtarget.url}</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includePackedArtifacts>true</includePackedArtifacts>
+					<!-- The Parallel Package feature.xml includes a number of other features 
+						that are marked as optional, and unfortunately they seem to be missing in 
+						Mars. Ignoring these options features for now. <dependency-resolution> <optionalDependencies>ignore</optionalDependencies> 
+						</dependency-resolution> -->
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+		       		<artifactId>maven-antrun-plugin</artifactId>
+		       		<version>1.8</version>
+		   		</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.8</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-p2-extras-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>materialize-products</id>
+							<goals>
+								<goal>materialize-products</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project> 
