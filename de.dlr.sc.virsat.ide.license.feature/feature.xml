@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.dlr.sc.virsat.ide.license.feature"
+      label="VirSat Development IDE License Feature"
+      version="4.9.0.qualifier"
+      provider-name="DLR (German Aerospace Center)">
+
+   <description>
+      License Feature for the Virtual Satellite IDE based on Eclipse for RCP and RAP Developers
+German Aerospace Center (DLR e.V.)
+Simulation and Software Technology
+   </description>
+
+   <copyright>
+      Copyright 2016
+by German Aerospace Center (DLR e.V.)
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+</feature>

@@ -1,0 +1,29 @@
+VirSat IDE Release Notes
+-------------------------
+
+Release 4.5.0 (28th February 2017)
+----------------------------------
+
+New Features:
+    Implementing new Features of VirSat 4.5.0 Core 
+    
+Usability Updates:
+    
+Fixed Bugs:
+    
+
+Release 4.4.0 (28th February 2017)
+----------------------------------
+
+New Features:
+    The project now delivers documentation - #4 Documentation feature 
+    
+Usability Updates:
+    usability Update - #124 It was actually not very useful
+    
+Fixed Bugs:
+    ExampleBug - #123 This Bug never existed
+    ExampleBug - #123 This Bug never existed
+    ExampleBug - #123 This Bug never existed
+
+    
