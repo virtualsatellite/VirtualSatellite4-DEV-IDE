@@ -8,11 +8,6 @@ cache:
   - $HOME/.m2
 
 addons:
-  # -----------------------------------------------------------
-  # Make the sourceforge hosts known, thus ssh connections will
-  # not ask to accept the finger print of the server
-  # -----------------------------------------------------------
-  ssh_known_hosts: frs.sourceforge.net
   # ---------------------------------------------------------------
   # Now use APT to install metacity, which is a window manager also 
   # needed for the SWTBOT UI tests
@@ -69,9 +64,6 @@ jobs:
       # call the maven build and store the output in a log file
       # use this log file to analyze it for compiler warnings
       # -------------------------------------------------------
-      - mvn clean compile -P development,target -B -V | tee maven.log
-      - echo "Check for Maven Problems on Overtarget:"
-      - (grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
       - mvn install -P development,deployUnsecured -B -V | tee maven.log
       - echo "Check for Maven Problems on Product:"
       - (grep -n "\[\(WARN\|WARNING\|ERROR\)\]" maven.log || exit 0  && exit 1;)
@@ -87,9 +79,6 @@ jobs:
       # call the maven build and store the output in a log file
       # use this log file to analyze it for compiler warnings
       # -------------------------------------------------------
-      - mvn clean compile -P development,target -B -V | tee maven.log
-      - echo "Check for Maven Problems on VirtualSatellite4-DEV-IDE:"
-      - (grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
       - mvn install -P development,deployUnsecured -B -V | tee maven.log
       - echo "Check for Maven Problems on Product:"
       - (grep -n "\[\(WARN\|WARNING\|ERROR\)\]" maven.log || exit 0  && exit 1;)
@@ -137,9 +126,6 @@ jobs:
       # call the maven build and store the output in a log file
       # use this log file to analyze it for compiler warnings
       # -------------------------------------------------------
-      - mvn clean compile -P development,target -B -V | tee maven.log
-      - echo "Check for Maven Problems on VirtualSatellite4-DEV-IDE:"
-      - (grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
       - mvn install -P integration,deployUnsecured -B -V | tee maven.log
       - echo "Check for Maven Problems on Product:"
       - (grep -n "\[\(WARN\|WARNING\|ERROR\)\]" maven.log || exit 0  && exit 1;)
@@ -186,10 +172,6 @@ jobs:
       # -------------------------------------------------------
       # call the maven build and store the output in a log file
       # use this log file to analyze it for compiler warnings
-      # -------------------------------------------------------
-      - mvn clean compile -P development,target -B -V | tee maven.log
-      - echo "Check for Maven Problems on VirtualSatellite4-DEV-IDE:"
-      - (grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
       - mvn install -P release,deployBackuped -B -V | tee maven.log
       - echo "Check for Maven Problems on Product:"
       - (grep -n "\[\(WARN\|WARNING\|ERROR\)\]" maven.log || exit 0  && exit 1;)
