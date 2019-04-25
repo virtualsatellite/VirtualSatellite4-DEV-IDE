@@ -1,14 +1,14 @@
-# Virtual Satellite 4 - CORE
+# Virtual Satellite 4 - DEV - IDE
 
 Eclipse based Developer IDE for Virtual Satellite 4 Developers.
 
 ## Project Status
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=development)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Coverage Status](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE/branch/development/graph/badge.svg)](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Download virtualsatellite](https://img.shields.io/sourceforge/dt/virtualsatellite.svg)](https://sourceforge.net/projects/virtualsatellite/files/development/) for *Development* build.
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=development)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE)
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=integration)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Coverage Status](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE/branch/integration/graph/badge.svg)](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Download virtualsatellite](https://img.shields.io/sourceforge/dt/virtualsatellite.svg)](https://sourceforge.net/projects/virtualsatellite/files/integration/) for *Integration* build.
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=integration)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE)
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=master)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Coverage Status](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE/branch/master/graph/badge.svg)](https://codecov.io/gh/virtualsatellite/VirtualSatellite4-DEV-IDE) [![Download virtualsatellite](https://img.shields.io/sourceforge/dt/virtualsatellite.svg)](https://sourceforge.net/projects/virtualsatellite/files/release/) for *Master* build.
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=master)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) 
 
 ## Purpose
 

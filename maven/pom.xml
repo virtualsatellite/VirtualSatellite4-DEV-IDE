@@ -33,6 +33,9 @@
 		<build.folder.type>test</build.folder.type>
 		<build.file.zip>VirSat_IDE_Test.zip</build.file.zip>
 		<build.deploy.release>false</build.deploy.release>
+		
+		<!-- OverTarget -->
+		<overtarget.version>1.1.0</overtarget.version>
 
 		<!-- Sonar Code Coverage -->
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
@@ -87,7 +90,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/integration/${build.version}/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Integration</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/integration/1.1.0/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/integration/${overtarget.version}/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -99,7 +102,9 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${BUILD_ID}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${BUILD_ID}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/79</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/155</p2.repo.virsat.url>
+				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 
@@ -173,12 +178,6 @@
 		</repository>
 
 		<repository>
-			<id>svn-subversive-feature</id>
-			<url>http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/</url>
-			<layout>p2</layout>
-		</repository>
-
-		<repository>
 			<id>m2t-JET-feature</id>
 			<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
 			<layout>p2</layout>
@@ -205,6 +204,18 @@
 		<repository>
 			<id>spotbugs-feature</id>
 			<url>https://spotbugs.github.io/eclipse-latest/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>maven-to-eclipse-tycho-feature</id>
+			<url>http://central.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>yaml-editor-feature</id>
+			<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
 			<layout>p2</layout>
 		</repository> 
 
