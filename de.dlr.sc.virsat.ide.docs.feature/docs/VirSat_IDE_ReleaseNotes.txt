@@ -1,0 +1,36 @@
+VirSat IDE Release Notes
+-------------------------
+
+Release 4.9.0 (25th April 2019)
+
+New Features:
+    Open Source Release 
+    Integration of OverTarget
+    Support for Linux
+    
+Usability Updates:
+    
+Fixed Bugs:
+
+Release 4.5.0 (28th February 2017)
+----------------------------------
+
+New Features:
+    Implementing new Features of VirSat 4.5.0 Core 
+    
+Usability Updates:
+    
+Fixed Bugs:
+    
+
+Release 4.4.0 (28th February 2017)
+----------------------------------
+
+New Features:
+    The project now delivers documentation - #4 Documentation feature 
+    
+Usability Updates:
+
+Fixed Bugs:
+
+    

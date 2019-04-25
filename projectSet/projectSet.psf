@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,."/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.branding.feature"/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.branding.ui"/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.dependencies.feature"/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.docs.feature"/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.license.feature"/>
+<project reference="1.0,https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE,development,de.dlr.sc.virsat.ide.product"/>
+</provider>
+</psf>

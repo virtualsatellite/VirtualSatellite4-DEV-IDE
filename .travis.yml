@@ -1,0 +1,167 @@
+language: java
+
+jdk:
+- oraclejdk8
+ 
+cache:
+  directories:
+  - $HOME/.m2
+
+install:
+- true
+
+stages:
+# ------------------------------------
+# Just one stage, multiple stages 
+# with maven overcomplicate the things
+# ------------------------------------
+- name: build-assemble-deploy
+
+env:
+  global:
+  # ---------------------------------------------
+  # API Token for access to github
+  # ---------------------------------------------
+  - secure: "JPkP+V/ke8IvZ7/GPA/d2DAIAMTk8AoYfC7W7u9WT/wf+YAIm0t57sjb2q6/LudIC5cxepo0icEqTIubmLsijvS+q+HJra1cNdP8/Pm6FxZuvfh6foOmKiMBBx+m6M3MI0qSjPZJ7ts2fmw36350Z+QcnqI+A4xpwflYjbm7pS7HxEDRohamvshcOXkN4x74lFtqGZrn9CRKjrsf+sHvO4ryTkT8ycqnnGtQJ1XO563NvugValTye8BRWU0G3kKTmY+BGhOW7vgyELkTnsSwZBikku2z3zI01/MaJsw6Lzf+tMvnaR4FDOA+3a76D5D/PVB6YJmvLOx7UZiUl34vWOWVwz5ilce8jSq8UyQE09WceU34W2rlz60eEHwh4u3aBWJb29k9T3TZR9NuA+CuOiK/e2Aavp12jSOmv6yk4svrl/D35UVpEkXhWVRlyyZ/Lb2hwFlNqU02zCoDRINdEBnLRDKOVD6OsFHXUOed9hfAP17qzaczIwSpzRiiv69tpHr4mKt8iDx/EBYJvlliISu6TE0nZPCGOFFdUk+Rf9RUNkSIutpJdx+OV1Mi92L0JfYBBjyOUf0dcoRm87V69y+4CZ7uHD/LezqMMVKUx39X/OgvXP/XHlmrq+azMvgxVO/VX7S3CQtDhgo9Cr6iXRgJBiBoUkCEJdrcxp9QBIA="
+
+jobs:
+  include:
+    # -----------------------------------------------------------
+    # -----------------------------------------------------------
+    # Here are the jobs for the assemble and deploy stage
+    # -----------------------------------------------------------
+    # --- The Job for feature branches only. Assemble the product, but don't deploy
+    - stage: build-assemble-deploy
+      if: branch NOT IN (integration, development, integration_snapshot, development_snapshot) AND NOT (tag =~ /^Release/)
+      name: Build-Assemble-Deploy - Feature
+      script:
+      # -------------------------------------------------------
+      # call the maven build and store the output in a log file
+      # -------------------------------------------------------
+      - mvn install -P development,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+
+    # -----------------------------------------------------------
+    # Deploy Jobs for unsecured Development.
+    #------------------------------------------------------------
+    - stage: build-assemble-deploy
+      if: branch = development
+      name: Build-Assemble-Deploy - Development
+      script:
+      # -------------------------------------------------------
+      # call the maven build and store the output in a log file
+      # -------------------------------------------------------
+      - mvn install -P development,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      before_deploy:
+        # -----------------------------------------------------------
+        # Update the development tag beforehand
+        # And send it back to the origin, otherwise travis will 
+        # apparently perform a git fetch before, and overwrite the
+        # moved tag back to the previous state.
+        #------------------------------------------------------------
+        - git tag -f development_snapshot
+        - git remote add github-mtd  https://${GITHUB_API_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+        - git push -f github-mtd development_snapshot
+        - git remote remove github-mtd
+      deploy:
+        # -----------------------------------------------------------
+        # Now attach the release to the newly created tag.
+        # release is attached to the tag on the current commit.
+        # -----------------------------------------------------------
+      - provider: releases
+        api_key: $GITHUB_API_TOKEN
+        file_glob: true
+        file:
+        - deploy/unsecured/p2/**/zip/*_p2.zip
+        - deploy/unsecured/bin/**/*.zip
+        - deploy/unsecured/bin/**/*.tar.gz
+        skip_cleanup: true
+        name: Virtual Satellite 4 DEV IDE Development Build
+        body: Development build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
+        prerelease: true
+        overwrite: true
+        target_commitish: $TRAVIS_COMMIT
+        on:
+          repo: virtualsatellite/VirtualSatellite4-DEV-IDE
+          branch: development
+      
+    # -----------------------------------------------------------
+    # Deploy Jobs for unsecured Integration.
+    #------------------------------------------------------------
+    - stage: build-assemble-deploy
+      if: branch = integration
+      name: Build-Assemble-Deploy - Integration
+      script:
+      # -------------------------------------------------------
+      # call the maven build and store the output in a log file
+      # -------------------------------------------------------
+      - mvn install -P integration,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      before_deploy:
+        # -----------------------------------------------------------
+        # Update the development tag beforehand
+        # And send it back to the origin, otherwise travis will 
+        # apparently perform a git fetch before, and overwrite the
+        # moved tag back to the previous state.
+        #------------------------------------------------------------
+        - git tag -f integration_snapshot
+        - git remote add github-mtd  https://${GITHUB_API_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+        - git push -f github-mtd integration_snapshot
+        - git remote remove github-mtd
+      deploy:
+        # -----------------------------------------------------------
+        # Now attach the release to the newly created tag.
+        # release is attached to the tag on the current commit.
+        # -----------------------------------------------------------
+      - provider: releases
+        api_key: $GITHUB_API_TOKEN
+        file_glob: true
+        file: 
+        - deploy/unsecured/p2/**/zip/*_p2.zip
+        - deploy/unsecured/bin/**/*.zip
+        - deploy/unsecured/bin/**/*.tar.gz
+        skip_cleanup: true
+        name: Virtual Satellite 4 DEV IDE Integration Build
+        body: Integration build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
+        prerelease: true
+        overwrite: true
+        target_commitish: $TRAVIS_COMMIT
+        on:
+          repo: virtualsatellite/VirtualSatellite4-DEV-IDE
+          branch: integration
+    
+    # -----------------------------------------------------------
+    # Deploy Jobs for secured Releases.
+    #------------------------------------------------------------
+    - stage: build-assemble-deploy
+      if: tag =~ /^Release/
+      name: Build-Assemble-Deploy - Release
+      script:
+      # -------------------------------------------------------
+      # call the maven build and store the output in a log file
+      - mvn install -P release,deployBackuped -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      deploy:
+        # -----------------------------------------------------------
+        # Now attach the release to the Release Tag.
+        # -----------------------------------------------------------
+      - provider: releases
+        api_key: $GITHUB_API_TOKEN
+        file_glob: true
+        file: 
+        - deploy/secured/p2/**/zip/*_p2.zip
+        - deploy/secured/bin/**/*.zip
+        - deploy/secured/bin/**/*.tar.gz
+        skip_cleanup: true
+        name: Virtual Satellite 4 DEV IDE Release Build
+        body: Release build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This is a stable release.
+        prerelease: true
+        on:
+          repo: virtualsatellite/VirtualSatellite4-DEV-IDE
+          tags: true
+                    

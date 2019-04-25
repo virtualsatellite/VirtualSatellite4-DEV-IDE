@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Virtual Satellite IDE for RCP and RAP Developers" uid="de.dlr.sc.virsat.ide.product" id="de.dlr.sc.virsat.ide.branding.ui.product" application="org.eclipse.ui.ide.workbench" version="4.9.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/de.dlr.sc.virsat.ide.branding.ui/eclipse_lg.png"/>
+      <text>
+         Virtual Satellite IDE
+
+Copyright by DLR (German Aerospace Center) Simulation and Software Technology 2018.
+
+based on Eclipse for RCP and RAP Developers
+
+(c) Copyright Eclipse contributors and others 2000, 2017.  All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. The Eclipse logo cannot be altered without Eclipse&apos;s permission. Eclipse logos are provided for use under the Eclipse logo and trademark guidelines, https://www.eclipse.org/logotm/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
+
+This product includes software developed by other open source projects including the Apache Software Foundation, https://www.apache.org/.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-product de.dlr.sc.virsat.ide.branding.ui.product
+-showsplash de.dlr.sc.virsat.ide.branding.ui
+--launcher.defaultAction openFile
+      </programArgs>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.8
+-Xms256m
+-Xmx1024m
+-XX:+UseG1GC
+-XX:+UseStringDeduplication
+      </vmArgs>
+   </launcherArgs>
+
+   <windowImages i16="/de.dlr.sc.virsat.ide.branding.ui/eclipse16.png" i32="/de.dlr.sc.virsat.ide.branding.ui/eclipse32.png" i48="/de.dlr.sc.virsat.ide.branding.ui/eclipse48.png" i256="/de.dlr.sc.virsat.ide.branding.ui/eclipse256.png"/>
+
+   <splash
+      location="de.dlr.sc.virsat.ide.branding.ui"
+      startupProgressRect="72,90,251,8"
+      startupMessageRect="72,110,251,20"
+      startupForegroundColor="9c9696" />
+   <launcher name="eclipse">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <intro introId="org.eclipse.ui.intro.universal"/>
+
+   <vm>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</macos>
+      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</solaris>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="de.dlr.sc.virsat.ide.branding.feature"/>
+      <feature id="de.dlr.sc.virsat.ide.dependencies.feature"/>
+   </features>
+
+
+   <repositories>
+      <repository location="file://U:\Confidential\VirSat\VirSat_Jenkins_Deploy\p2\VirSat4_Dvlm_ConceptIDE\development" enabled="true" />
+      <repository location="file://U:\Confidential\VirSat\VirSat_Jenkins_Deploy\p2\OverTarget_IDE\development" enabled="true" />
+   </repositories>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>
