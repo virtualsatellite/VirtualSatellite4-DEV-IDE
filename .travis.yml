@@ -39,6 +39,8 @@ jobs:
       # call the maven build and store the output in a log file
       # -------------------------------------------------------
       - mvn install -P development,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
 
     # -----------------------------------------------------------
     # Deploy Jobs for unsecured Development.
@@ -51,6 +53,8 @@ jobs:
       # call the maven build and store the output in a log file
       # -------------------------------------------------------
       - mvn install -P development,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
       before_deploy:
         # -----------------------------------------------------------
         # Update the development tag beforehand
@@ -95,6 +99,8 @@ jobs:
       # call the maven build and store the output in a log file
       # -------------------------------------------------------
       - mvn install -P integration,deployUnsecured -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
       before_deploy:
         # -----------------------------------------------------------
         # Update the development tag beforehand
@@ -138,6 +144,8 @@ jobs:
       # -------------------------------------------------------
       # call the maven build and store the output in a log file
       - mvn install -P release,deployBackuped -B -V | tee maven.log
+      - echo "Check for Maven Problems on Product:"
+      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
       deploy:
         # -----------------------------------------------------------
         # Now attach the release to the Release Tag.
