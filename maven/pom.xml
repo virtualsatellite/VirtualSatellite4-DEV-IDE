@@ -214,6 +214,12 @@
 		</repository> 
 
 		<repository>
+			<id>maven-to-eclipse-feature</id>
+			<url>https://download.eclipse.org/technology/m2e/releases/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
 			<id>${p2.repo.virsat.id}</id>
 			<url>${p2.repo.virsat.url}</url>
 			<layout>p2</layout>
