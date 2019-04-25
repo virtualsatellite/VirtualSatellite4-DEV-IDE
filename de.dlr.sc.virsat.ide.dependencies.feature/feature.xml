@@ -65,5 +65,7 @@ by German Aerospace Center (DLR e.V.)
       <import feature="com.github.spotbugs.plugin.eclipse" version="3.1.5.r201806132012-cbbf0a5"/>
       <import feature="org.sonatype.tycho.m2e.feature" version="0.8.1.201704211436"/>
       <import feature="de.jcup.yamleditor" version="1.4.2"/>
+      <import feature="de.dlr.sc.virsat.target.feature" version="4.9.0.qualifier"/>
    </requires>
+
 </feature>
