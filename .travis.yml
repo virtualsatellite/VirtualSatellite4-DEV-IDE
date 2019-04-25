@@ -79,7 +79,7 @@ jobs:
         - deploy/unsecured/bin/**/*.zip
         - deploy/unsecured/bin/**/*.tar.gz
         skip_cleanup: true
-        name: Virtual Satellite 4 Dev Ide Build
+        name: Virtual Satellite 4 DEV IDE Development Build
         body: Development build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
         prerelease: true
         overwrite: true
@@ -125,7 +125,7 @@ jobs:
         - deploy/unsecured/bin/**/*.zip
         - deploy/unsecured/bin/**/*.tar.gz
         skip_cleanup: true
-        name: Virtual Satellite 4 Dev Ide Integration Build
+        name: Virtual Satellite 4 DEV IDE Integration Build
         body: Integration build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
         prerelease: true
         overwrite: true
@@ -158,7 +158,7 @@ jobs:
         - deploy/secured/bin/**/*.zip
         - deploy/secured/bin/**/*.tar.gz
         skip_cleanup: true
-        name: Virtual Satellite 4 Core Release Build
+        name: Virtual Satellite 4 DEV IDE Release Build
         body: Release build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This is a stable release.
         prerelease: true
         on:
