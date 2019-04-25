@@ -35,7 +35,7 @@
 		<build.deploy.release>false</build.deploy.release>
 		
 		<!-- OverTarget -->
-		<overtarget.version>4.9.0</overtarget.version>
+		<overtarget.version>1.1.0</overtarget.version>
 
 		<!-- Sonar Code Coverage -->
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
