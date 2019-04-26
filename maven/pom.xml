@@ -77,7 +77,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/1.1.0/25/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
