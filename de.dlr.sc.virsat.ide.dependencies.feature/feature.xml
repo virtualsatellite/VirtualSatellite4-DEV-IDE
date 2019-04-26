@@ -66,4 +66,5 @@ by German Aerospace Center (DLR e.V.)
       <import feature="org.sonatype.tycho.m2e.feature" version="0.8.1.201704211436"/>
       <import feature="de.jcup.yamleditor" version="1.4.2"/>
    </requires>
+
 </feature>
