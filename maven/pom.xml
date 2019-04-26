@@ -10,8 +10,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.dlr.sc.virsat</groupId>
-	<artifactId>de.dlr.sc.virsat.ide</artifactId>
+	<groupId>de.dlr.sc.virsat.ide</groupId>
+	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
 	<version>4.9.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -77,7 +77,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/1.1.0/25/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -102,7 +102,7 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/155</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/171</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25</p2.repo.overtarget.url>
 			</properties>
