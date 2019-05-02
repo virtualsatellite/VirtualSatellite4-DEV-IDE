@@ -42,9 +42,6 @@ by German Aerospace Center (DLR e.V.)
       <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.19.201711172000"/>
       <import feature="org.eclipse.mylyn.github.feature" version="4.9.0.201710071750-r"/>
       <import feature="org.eclipse.rap.tools.feature" version="3.4.0.20171204-1016"/>
-      <import feature="org.eclipse.recommenders.mylyn.rcp.feature" version="2.5.0.v20171201-1623"/>
-      <import feature="org.eclipse.recommenders.rcp.feature" version="2.5.0.v20171201-1623"/>
-      <import feature="org.eclipse.recommenders.snipmatch.rcp.feature" version="2.5.0.v20171201-1623"/>
       <import feature="org.eclipse.swtbot.eclipse" version="2.6.0.201706141832"/>
       <import feature="org.eclipse.swtbot.eclipse.gef" version="2.6.0.201706141832"/>
       <import feature="org.eclipse.swtbot.ide" version="2.6.0.201706141832"/>
