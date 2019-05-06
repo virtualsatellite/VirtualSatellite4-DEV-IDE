@@ -45,7 +45,6 @@
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
 	    <eclipse.simultaneous.release.name>2019-03 Release (4.11)</eclipse.simultaneous.release.name>
-	    <!-- eclipse.simultaneous.release.repository>http://download.eclipse.org/staging/oxygen/</eclipse.simultaneous.release.repository-->
 	    <eclipse.simultaneous.release.repository>https://download.eclipse.org/releases/2019-03/</eclipse.simultaneous.release.repository>
 	</properties>
 
