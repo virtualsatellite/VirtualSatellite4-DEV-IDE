@@ -4,11 +4,11 @@ Eclipse based Developer IDE for Virtual Satellite 4 Developers.
 
 ## Project Status
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=development)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE)
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=development)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Development* build.
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=integration)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE)
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=integration)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Integration* build.
 
-Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=master)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) 
+Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE.svg?branch=master)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Master* build.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ Virtual Satellite 4 Developer IDE is the development toolkit for modifying, exte
 ## Requirements 
 
 Virtual Satellite is based on Java / Eclipse and provides an installable feature with plug-ins for your personal eclipse IDE. The following infrastructure is required:
- - Java Development Kit (JDK) 8
+ - Java Development Kit (JDK) 11
  - Eclipse Oxygen or newer
    - Including Checkstyle
    - Including Spotbugs
