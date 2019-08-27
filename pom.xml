@@ -17,7 +17,7 @@
 
 	<modules>
 		<module>de.dlr.sc.virsat.ide.product</module>
-		<module>de.dlr.sc.virsat.ide.dependencies.feature</module>
+		
 		
 		<module>de.dlr.sc.virsat.ide.license.feature</module>
 		<module>de.dlr.sc.virsat.ide.docs.feature</module>
