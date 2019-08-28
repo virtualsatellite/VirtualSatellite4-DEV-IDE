@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
+		<tycho-version>1.4.0</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -44,9 +44,9 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>Oxygen.1 Release (4.7.1)</eclipse.simultaneous.release.name>
+	    <eclipse.simultaneous.release.name>2019-06 Release</eclipse.simultaneous.release.name>
 	    <!-- eclipse.simultaneous.release.repository>http://download.eclipse.org/staging/oxygen/</eclipse.simultaneous.release.repository-->
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/oxygen/</eclipse.simultaneous.release.repository>
+	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2019-06/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -204,6 +204,12 @@
 		<repository>
 			<id>spotbugs-feature</id>
 			<url>https://spotbugs.github.io/eclipse-latest/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>m2eclipse</id>
+			<url>https://download.eclipse.org/technology/m2e/releases/</url>
 			<layout>p2</layout>
 		</repository> 
 
