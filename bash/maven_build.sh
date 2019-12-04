@@ -23,7 +23,7 @@ COMMAND=$0
 
 # this method gives some little usage info
 printUsage() {
-	echo "usage: ${COMMAND} -j [surefire|spotbugs|checkstyle|assemble] -p [development|integration|release]"
+	echo "usage: ${COMMAND} -j [assemble] -p [development|integration|release]"
 	echo ""
 	echo "Options:"
 	echo " -j, --jobs <jobname>	    The name of the Travis-CI job to be build."
@@ -56,7 +56,7 @@ callMavenAssemble() {
 	fi
 	echo "Maven - Assemlbe - ${MAVEN_PROFILE} - ${DEPLOY_TYPE}"
 	(grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
-	mvn clean install -P ${MAVEN_PROFILE},doc,deploy,${DEPLOY_TYPE},product -B -V | tee maven.log
+	mvn clean install -P ${MAVEN_PROFILE},${DEPLOY_TYPE} -B -V | tee maven.log
 	checkforMavenProblems
 }
 
