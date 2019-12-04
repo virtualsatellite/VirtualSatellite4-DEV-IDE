@@ -1,7 +1,21 @@
 VirSat IDE Release Notes
 -------------------------
 
-Release 4.9.0 (25th April 2019)
+Release 4.10.0 (4th December 2019)
+----------------------------------
+
+New Features:
+    Added AsciiDoc Editor to IDE
+    Added PyDev to IDE
+    Updated to Eclipse 2019-06
+    Now build with openJDK 8
+    
+Usability Updates:
+    
+Fixed Bugs:
+
+Release 4.9.0    (25th April 2019)
+----------------------------------
 
 New Features:
     Open Source Release 
