@@ -55,8 +55,6 @@ callMavenAssemble() {
 		DEPLOY_TYPE="deployUnsecured"
 	fi
 	echo "Maven - Assemlbe - ${MAVEN_PROFILE} - ${DEPLOY_TYPE}"
-	mvn clean compile -P ${MAVEN_PROFILE},target -B -V | tee maven.log
-	echo "Check for Maven Problems on Overtarget:"
 	(grep -n "\[\(WARN\|ERROR\)\]" maven.log || exit 0  && exit 1;)
 	mvn clean install -P ${MAVEN_PROFILE},doc,deploy,${DEPLOY_TYPE},product -B -V | tee maven.log
 	checkforMavenProblems
