@@ -1,11 +1,19 @@
 language: java
 
+dist: xenial
+
 jdk:
 - openjdk8
  
 cache:
   directories:
   - $HOME/.m2
+
+before_script:
+  # -----------------------------------
+  # Make sure scripts are executable
+  # -----------------------------------
+  - chmod 700 bash/*
 
 install:
 - true
@@ -34,7 +42,8 @@ jobs:
     - stage: verify
       name: Verify - Authors Sanity Check
       script:
-      - ./bash/verify_commit_authors.sh known_authors.txt   
+      - ./bash/verify_commit_authors.sh known_authors.txt
+
     # -----------------------------------------------------------
     # -----------------------------------------------------------
     # Here are the jobs for the assemble and deploy stage
@@ -44,12 +53,7 @@ jobs:
       if: branch NOT IN (integration, development, integration_snapshot, development_snapshot) AND NOT (tag =~ /^Release/)
       name: Build-Assemble-Deploy - Feature
       script:
-      # -------------------------------------------------------
-      # call the maven build and store the output in a log file
-      # -------------------------------------------------------
-      - mvn install -P development,deployUnsecured -B -V | tee maven.log
-      - echo "Check for Maven Problems on Product:"
-      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      - bash/maven_build.sh -j assemble -p development   
 
     # -----------------------------------------------------------
     # Deploy Jobs for unsecured Development.
@@ -58,12 +62,7 @@ jobs:
       if: branch = development
       name: Build-Assemble-Deploy - Development
       script:
-      # -------------------------------------------------------
-      # call the maven build and store the output in a log file
-      # -------------------------------------------------------
-      - mvn install -P development,deployUnsecured -B -V | tee maven.log
-      - echo "Check for Maven Problems on Product:"
-      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      - bash/maven_build.sh -j assemble -p development   
       before_deploy:
         # -----------------------------------------------------------
         # Update the development tag beforehand
@@ -104,12 +103,7 @@ jobs:
       if: branch = integration
       name: Build-Assemble-Deploy - Integration
       script:
-      # -------------------------------------------------------
-      # call the maven build and store the output in a log file
-      # -------------------------------------------------------
-      - mvn install -P integration,deployUnsecured -B -V | tee maven.log
-      - echo "Check for Maven Problems on Product:"
-      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      - bash/maven_build.sh -j assemble -p integration   
       before_deploy:
         # -----------------------------------------------------------
         # Update the development tag beforehand
@@ -150,11 +144,7 @@ jobs:
       if: tag =~ /^Release/
       name: Build-Assemble-Deploy - Release
       script:
-      # -------------------------------------------------------
-      # call the maven build and store the output in a log file
-      - mvn install -P release,deployBackuped -B -V | tee maven.log
-      - echo "Check for Maven Problems on Product:"
-      - (grep -n "\[ERROR\]" maven.log || exit 0  && exit 1;)
+      - bash/maven_build.sh -j assemble -p release   
       deploy:
         # -----------------------------------------------------------
         # Now attach the release to the Release Tag.
