@@ -20,7 +20,7 @@
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.9.0</build.version>
+		<build.version>4.10.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
 
 		<build.folder.target>builds</build.folder.target>
