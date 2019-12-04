@@ -45,6 +45,8 @@ checkforMavenProblems() {
 	(grep -n "\[\(WARN\|WARNING\|ERROR\)\]" maven.log \
 	| grep -v "\[WARNING\] Checksum validation failed" \
 	| grep -v "\[WARNING\] Could not validate integrity of download" \
+	| grep -v "\[WARNING\] The following locally built units have been used" \
+	| grep -v "\[WARNING\]   tooling" \
 	|| exit 0 && exit 1;)
 }
 
