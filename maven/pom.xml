@@ -12,15 +12,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-	<version>4.9.0-SNAPSHOT</version>
+	<version>4.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
+		<tycho-version>1.4.0</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.9.0</build.version>
+		<build.version>4.10.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
 
 		<build.folder.target>builds</build.folder.target>
@@ -44,9 +44,9 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>Oxygen.1 Release (4.7.1)</eclipse.simultaneous.release.name>
+	    <eclipse.simultaneous.release.name>2019-06 Release</eclipse.simultaneous.release.name>
 	    <!-- eclipse.simultaneous.release.repository>http://download.eclipse.org/staging/oxygen/</eclipse.simultaneous.release.repository-->
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/oxygen/</eclipse.simultaneous.release.repository>
+	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2019-06/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -197,7 +197,7 @@
 
 		<repository>
 			<id>checkstyle-feature</id>
-			<url>http://eclipse-cs.sourceforge.net/update/</url>
+			<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
 			<layout>p2</layout>
 		</repository> 
 		
@@ -208,14 +208,32 @@
 		</repository> 
 
 		<repository>
+			<id>m2eclipse</id>
+			<url>https://download.eclipse.org/technology/m2e/releases/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
 			<id>maven-to-eclipse-tycho-feature</id>
 			<url>http://central.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
 			<layout>p2</layout>
 		</repository> 
 
 		<repository>
+			<id>asciidoc-editor</id>
+			<url>https://dl.bintray.com/de-jcup/asciidoctoreditor</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
 			<id>yaml-editor-feature</id>
 			<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
+			<layout>p2</layout>
+		</repository> 
+
+		<repository>
+			<id>pydev</id>
+			<url>http://www.pydev.org/updates/</url>
 			<layout>p2</layout>
 		</repository> 
 
@@ -230,6 +248,7 @@
 			<url>${p2.repo.overtarget.url}</url>
 			<layout>p2</layout>
 		</repository>
+		
 	</repositories>
 
 	<build>
