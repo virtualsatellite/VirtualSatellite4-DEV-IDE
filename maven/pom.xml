@@ -197,7 +197,7 @@
 
 		<repository>
 			<id>checkstyle-feature</id>
-			<url>http://eclipse-cs.sourceforge.net/update/</url>
+			<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
 			<layout>p2</layout>
 		</repository> 
 		
