@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Virtual Satellite IDE for RCP and RAP Developers" uid="de.dlr.sc.virsat.ide.product" id="de.dlr.sc.virsat.ide.branding.ui.product" application="org.eclipse.ui.ide.workbench" version="4.9.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Virtual Satellite IDE for RCP and RAP Developers" uid="de.dlr.sc.virsat.ide.product" id="de.dlr.sc.virsat.ide.branding.ui.product" application="org.eclipse.ui.ide.workbench" version="4.10.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/de.dlr.sc.virsat.ide.branding.ui/eclipse_lg.png"/>
