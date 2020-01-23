@@ -215,7 +215,7 @@
 
 		<repository>
 			<id>maven-to-eclipse-tycho-feature</id>
-			<url>http://central.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
+			<url>https://central.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
 			<layout>p2</layout>
 		</repository> 
 
