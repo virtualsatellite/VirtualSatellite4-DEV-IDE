@@ -22,6 +22,7 @@
 
 		<build.version>4.11.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
+		<maven.build.timestamp.format>'t'yyyyMMddHHmm</maven.build.timestamp.format>
 
 		<build.folder.target>builds</build.folder.target>
 		<build.folder.p2>p2</build.folder.p2>
@@ -71,6 +72,7 @@
 			<id>development</id>
 			<properties>
 				<build.qualifier>'d'yyyyMMddHHmm</build.qualifier>
+				<maven.build.timestamp.format>'d'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.folder.type>development</build.folder.type>
 				<build.file.win32>VirSat_IDE_Development_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Development_Linux.tar.gz</build.file.linux>
@@ -84,7 +86,7 @@
 			<id>integration</id>
 			<properties>
 				<build.qualifier>'i'yyyyMMddHHmm</build.qualifier>
-				<build.folder.type>integration/</build.folder.type>
+				<maven.build.timestamp.format>'i'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.file.win32>VirSat_IDE_Integration_${build.version}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Integration_${build.version}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
@@ -98,6 +100,7 @@
 			<properties>
 				<build.deploy.release>true</build.deploy.release>
 				<build.qualifier>'r'yyyyMMddHHmm</build.qualifier>
+				<maven.build.timestamp.format>'r'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.folder.type>release/${build.version}/${TRAVIS_BUILD_NUMBER}</build.folder.type>
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
@@ -289,6 +292,12 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
+				<configuration>
+					<format>${build.qualifier}</format>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 

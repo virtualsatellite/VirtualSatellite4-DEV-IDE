@@ -6,9 +6,15 @@ This content is produced and maintained by German Aerospace Center (DLR), Simula
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+<http://www.eclipse.org/legal/epl-2.0>.
+
 
 SPDX-License-Identifier: EPL-2.0
+
+## DLR logo and images
+
+(c) Copyright by DLR (German Aerospace Center) Simulation and Software Technology 2020. The DLR logo and DLR images are under copyright of DLR (German Aerospace Center), <https://www.dlr.de/>. The DLR logo and images cannot be altered or used without DLR&apos;s permission. DLR logo and images are provided for the use under the following conditions <https://www.dlr.de/EN/Service/Imprint/imprint_node.html>. 
+
 
 ## Cryptography
 
