@@ -7,13 +7,13 @@ http://www.eclipse.org/legal/epl-2.0.
 
 SPDX-License-Identifier: EPL-2.0
 -->
-	
-<project name="VirSat Core" default="updateVersions" basedir=".">
+
+<project name="VirSat Core" default="updateVersions" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
 	<description>
   	  Additional Build Preparations for VirSat
   	</description>
 
-	<property name="version">4.10.0</property>
+	<property name="version">4.11.0</property>
 
 	<property name="version.pattern.qualified">[\s]?[0-9]+\.[0-9]+\.[0-9]+\.qualifier</property>
 	<property name="version.pattern">[\s]?[0-9]+\.[0-9]+\.[0-9]+</property>
@@ -73,7 +73,7 @@ SPDX-License-Identifier: EPL-2.0
 		     ===================================================== -->
 		<input message="Please enter the new Version Number (e.g.: 4.0.3):" 
 			addproperty="version.new" 
-			defaultvalue="4.0.3" />
+			defaultvalue="${version}" />
 		<property name="version.new.qualified">${version.new}.qualifier</property>
 
 		<!-- =====================================================
@@ -86,7 +86,7 @@ SPDX-License-Identifier: EPL-2.0
 				<include name="build.xml" />
 			</fileset>
 		</replaceregexp>
-		
+
 		<!-- =====================================================
 		     Task: updateVersion - Update master pom
 		     ===================================================== -->
@@ -106,8 +106,8 @@ SPDX-License-Identifier: EPL-2.0
 			<regexp pattern="&lt;build.version&gt;${version.pattern}&lt;/build.version&gt;" />
 			<substitution expression="&lt;build.version&gt;${version.new}&lt;/build.version&gt;" />
 			<fileset dir=".">
-				<exclude name="de.dlr.sc.**/target/"/>
-				<include name="de.dlr.sc.**/**/pom.xml" />
+				<exclude name="**/target/"/>
+				<include name="**/pom.xml" />
 			</fileset>
 		</replaceregexp>
 
@@ -175,35 +175,5 @@ SPDX-License-Identifier: EPL-2.0
 				<include name="de.dlr.sc.**/**/updateSitePom/pom.xml" />
 			</fileset>
 		</replaceregexp>
-
-
-		<!-- =====================================================
-		     Task: updateVersion - Update Product Version
-		     ===================================================== -->
-		<replaceregexp byline="true">
-			<regexp pattern="version=&quot;${version.pattern.qualified}&quot;" />
-			<substitution expression="version=&quot;${version.new.qualified}&quot;" />
-			<fileset dir=".">
-				<exclude name="de.dlr.sc.**/target/"/>
-				<include name="de.dlr.sc.**/**/*.product" />
-			</fileset>
-		</replaceregexp>
-		<replaceregexp byline="true">
-			<regexp pattern="Version${version.pattern}" />
-			<substitution expression="Version ${version.new}" />
-			<fileset dir=".">
-				<exclude name="de.dlr.sc.**/target/"/>
-				<include name="de.dlr.sc.**/**/*.product" />
-			</fileset>
-		</replaceregexp>
-		<replaceregexp byline="true">
-			<regexp pattern="Version${version.pattern}" />
-			<substitution expression="Version ${version.new}" />
-			<fileset dir=".">
-				<exclude name="de.dlr.sc.**/target/"/>
-				<include name="de.dlr.sc.**/**/plugin.xml" />
-			</fileset>
-		</replaceregexp>
-
 	</target>
 </project>
