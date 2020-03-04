@@ -87,7 +87,7 @@
 			<properties>
 				<build.qualifier>'i'yyyyMMddHHmm</build.qualifier>
 				<maven.build.timestamp.format>'i'yyyyMMddHHmm</maven.build.timestamp.format>
-				<build.folder.type>integration</build.folder.type>
+				<build.folder.type>integration/${build.version}</build.folder.type>
 				<build.file.win32>VirSat_IDE_Integration_${build.version}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Integration_${build.version}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
