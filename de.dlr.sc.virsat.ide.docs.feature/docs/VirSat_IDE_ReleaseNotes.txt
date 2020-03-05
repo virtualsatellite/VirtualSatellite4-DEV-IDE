@@ -10,7 +10,7 @@ New Features:
 Usability Updates:
     
 Fixed Bugs:
-
+    Updated Feature Logo to Virtual Satellite specific one
 
 Release 4.10.0 (4th December 2019)
 ----------------------------------
