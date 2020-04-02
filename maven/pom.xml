@@ -12,7 +12,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-	<version>4.10.0-SNAPSHOT</version>
+	<version>4.11.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -20,8 +20,9 @@
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.10.0</build.version>
+		<build.version>4.11.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
+		<maven.build.timestamp.format>'t'yyyyMMddHHmm</maven.build.timestamp.format>
 
 		<build.folder.target>builds</build.folder.target>
 		<build.folder.p2>p2</build.folder.p2>
@@ -71,6 +72,7 @@
 			<id>development</id>
 			<properties>
 				<build.qualifier>'d'yyyyMMddHHmm</build.qualifier>
+				<maven.build.timestamp.format>'d'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.folder.type>development</build.folder.type>
 				<build.file.win32>VirSat_IDE_Development_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Development_Linux.tar.gz</build.file.linux>
@@ -84,7 +86,8 @@
 			<id>integration</id>
 			<properties>
 				<build.qualifier>'i'yyyyMMddHHmm</build.qualifier>
-				<build.folder.type>integration/</build.folder.type>
+				<maven.build.timestamp.format>'i'yyyyMMddHHmm</maven.build.timestamp.format>
+				<build.folder.type>integration/${build.version}</build.folder.type>
 				<build.file.win32>VirSat_IDE_Integration_${build.version}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Integration_${build.version}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
@@ -98,11 +101,12 @@
 			<properties>
 				<build.deploy.release>true</build.deploy.release>
 				<build.qualifier>'r'yyyyMMddHHmm</build.qualifier>
+				<maven.build.timestamp.format>'r'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.folder.type>release/${build.version}/${TRAVIS_BUILD_NUMBER}</build.folder.type>
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/1969</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2880</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25</p2.repo.overtarget.url>
 			</properties>
@@ -215,7 +219,7 @@
 
 		<repository>
 			<id>maven-to-eclipse-tycho-feature</id>
-			<url>http://central.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
+			<url>https://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/</url>
 			<layout>p2</layout>
 		</repository> 
 
@@ -289,6 +293,12 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
+				<configuration>
+					<format>${build.qualifier}</format>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 
