@@ -91,6 +91,7 @@ This product includes software developed by other open source projects including
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
       <feature id="de.dlr.sc.virsat.ide.branding.feature" installMode="root"/>
       <feature id="de.dlr.sc.virsat.model.concept.feature" installMode="root"/>
+      <feature id="de.dlr.sc.virsat.model.ext.core.feature" installMode="root"/>
       <feature id="de.dlr.sc.overtarget.feature" installMode="root"/>
       <feature id="org.eclipse.emf.edapt.recorder.feature" installMode="root"/>
       <feature id="org.eclipse.emf.edapt.runtime.feature" installMode="root"/>
