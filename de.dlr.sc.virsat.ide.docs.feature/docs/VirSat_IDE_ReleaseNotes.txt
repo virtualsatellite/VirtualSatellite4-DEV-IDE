@@ -1,6 +1,17 @@
 VirSat IDE Release Notes
 -------------------------
 
+Release 4.11.0    (4th March 2020)
+----------------------------------
+
+New Features:
+    Added Concept language and generators of Virtual Satellite Core 4.11.0
+    
+Usability Updates:
+    
+Fixed Bugs:
+    Updated Feature Logo to Virtual Satellite specific one
+
 Release 4.10.0 (4th December 2019)
 ----------------------------------
 

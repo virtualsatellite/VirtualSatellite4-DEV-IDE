@@ -2,7 +2,7 @@
 <feature
       id="de.dlr.sc.virsat.ide.branding.feature"
       label="VirSat Development IDE Branding and Package Feature"
-      version="4.10.0.qualifier"
+      version="4.11.0.qualifier"
       provider-name="DLR (German Aerospace Center)"
       plugin="de.dlr.sc.virsat.ide.branding.ui"
       license-feature="de.dlr.sc.virsat.ide.license.feature">
@@ -29,8 +29,8 @@ by German Aerospace Center (DLR e.V.)
       <import feature="org.eclipse.epp.mpc"/>
       <import feature="org.eclipse.epp.logging.aeri.feature"/>
       <import feature="org.eclipse.oomph.setup"/>
-      <import feature="de.dlr.sc.virsat.ide.license.feature" version="4.10.0.qualifier"/>
-      <import feature="de.dlr.sc.virsat.ide.docs.feature" version="4.10.0.qualifier"/>
+      <import feature="de.dlr.sc.virsat.ide.license.feature" version="4.11.0.qualifier"/>
+      <import feature="de.dlr.sc.virsat.ide.docs.feature" version="4.11.0.qualifier"/>
    </requires>
 
    <plugin

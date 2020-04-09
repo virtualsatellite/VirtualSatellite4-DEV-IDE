@@ -14,7 +14,7 @@
 		<relativePath>../maven/pom.xml</relativePath>
 		<groupId>de.dlr.sc.virsat.ide</groupId>
 		<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-		<version>4.10.0-SNAPSHOT</version>
+		<version>4.11.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>de.dlr.sc.virsat.ide.docs.feature</artifactId>
