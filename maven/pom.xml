@@ -12,15 +12,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-	<version>4.11.0-SNAPSHOT</version>
+	<version>4.12.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>1.4.0</tycho-version>
+		<tycho-version>1.7.0</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.11.0</build.version>
+		<build.version>4.12.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
 		<maven.build.timestamp.format>'t'yyyyMMddHHmm</maven.build.timestamp.format>
 
@@ -45,9 +45,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>2019-06 Release</eclipse.simultaneous.release.name>
-	    <!-- eclipse.simultaneous.release.repository>http://download.eclipse.org/staging/oxygen/</eclipse.simultaneous.release.repository-->
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2019-06/</eclipse.simultaneous.release.repository>
+	    <eclipse.simultaneous.release.name>2020-06 Release</eclipse.simultaneous.release.name>
+	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2020-06/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -106,7 +105,7 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2880</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/4763</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25</p2.repo.overtarget.url>
 			</properties>

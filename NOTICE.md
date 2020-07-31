@@ -1,6 +1,6 @@
 # Virtual Satellite IDE
 
-This content is produced and maintained by German Aerospace Center (DLR), Simulation and Software Technology.
+This content was engendered by Deutsches Zentrum fuer Luft- und Raumfahrt e.V., German Aerospace Center, DLR and is protected under DLR copyright, © DLR 2020.
 
 ## Project License
 
@@ -11,9 +11,11 @@ terms of the Eclipse Public License 2.0 which is available at
 
 SPDX-License-Identifier: EPL-2.0
 
-## DLR logo and images
+## DLR trade mark and copyrighted material other than S/W
 
-(c) Copyright by DLR (German Aerospace Center) Simulation and Software Technology 2020. The DLR logo and DLR images are under copyright of DLR (German Aerospace Center), <https://www.dlr.de/>. The DLR logo and images cannot be altered or used without DLR&apos;s permission. DLR logo and images are provided for the use under the following conditions <https://www.dlr.de/EN/Service/Imprint/imprint_node.html>. 
+The DLR trade mark (as  the word mark DLR or as combination DLR with the DLR Logo)  is a registered and protected trade mark and may not be used without DLR´s prior written permission.
+
+Copyrighted content other than the S/W provided under the indicated Eclipse License Conditions such as images, photographs, videos and texts which are indicated as being under DLR´s copyright through copyright notice ( i.g. © DLR 2020) are provided for use under the Terms of use as provided for on DLRs webpage <http://www.dlr.de>.
 
 
 ## Cryptography
