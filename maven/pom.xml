@@ -105,7 +105,7 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2880</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/4763</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/25</p2.repo.overtarget.url>
 			</properties>
