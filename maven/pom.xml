@@ -36,7 +36,7 @@
 		<build.deploy.release>false</build.deploy.release>
 		
 		<!-- OverTarget -->
-		<overtarget.version>1.2.0</overtarget.version>
+		<overtarget.version>1.2.1</overtarget.version>
 
 		<!-- Sonar Code Coverage -->
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
@@ -78,7 +78,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/440/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -92,7 +92,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/integration/${build.version}/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Integration</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/440/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -107,7 +107,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2880</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/440</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 
