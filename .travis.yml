@@ -86,15 +86,15 @@ jobs:
         # release is attached to the tag on the current commit.
         # -----------------------------------------------------------
       - provider: releases
-        api_key: $GITHUB_API_TOKEN
+        token: $GITHUB_API_TOKEN
         file_glob: true
         file:
         - deploy/unsecured/p2/**/zip/*_p2.zip
         - deploy/unsecured/bin/**/*.zip
         - deploy/unsecured/bin/**/*.tar.gz
-        skip_cleanup: true
+        cleanup: false
         name: Virtual Satellite 4 DEV IDE Development Build
-        body: Development build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
+        release_notes: Development build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
         prerelease: true
         overwrite: true
         target_commitish: $TRAVIS_COMMIT
@@ -127,15 +127,15 @@ jobs:
         # release is attached to the tag on the current commit.
         # -----------------------------------------------------------
       - provider: releases
-        api_key: $GITHUB_API_TOKEN
+        token: $GITHUB_API_TOKEN
         file_glob: true
         file: 
         - deploy/unsecured/p2/**/zip/*_p2.zip
         - deploy/unsecured/bin/**/*.zip
         - deploy/unsecured/bin/**/*.tar.gz
-        skip_cleanup: true
+        cleanup: false
         name: Virtual Satellite 4 DEV IDE Integration Build
-        body: Integration build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
+        release_notes: Integration build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This release is subject to constant change.
         prerelease: true
         overwrite: true
         target_commitish: $TRAVIS_COMMIT
@@ -156,15 +156,15 @@ jobs:
         # Now attach the release to the Release Tag.
         # -----------------------------------------------------------
       - provider: releases
-        api_key: $GITHUB_API_TOKEN
+        token: $GITHUB_API_TOKEN
         file_glob: true
         file: 
         - deploy/secured/p2/**/zip/*_p2.zip
         - deploy/secured/bin/**/*.zip
         - deploy/secured/bin/**/*.tar.gz
-        skip_cleanup: true
+        cleanup: false
         name: Virtual Satellite 4 DEV IDE Release Build
-        body: Release build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This is a stable release.
+        release_notes: Release build on latest commit by Travis CI - $TRAVIS_BRANCH ($TRAVIS_COMMIT) - $(date +'%F %T %Z'). This is a stable release.
         prerelease: true
         on:
           repo: virtualsatellite/VirtualSatellite4-DEV-IDE

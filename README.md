@@ -14,7 +14,7 @@ Status [![Build Status](https://travis-ci.com/virtualsatellite/VirtualSatellite4
 
 Virtual Satellite 4 Developer IDE is the development toolkit for modifying, extending and building up upon Virtual Satellite 4.
 
-## Requirements 
+## Requirements
 
 Virtual Satellite is based on Java / Eclipse and provides an installable feature with plug-ins for your personal eclipse IDE. The following infrastructure is required:
  - Java Development Kit (JDK) 8
@@ -71,6 +71,13 @@ Copyright 2019 German Aerospace Center (DLR)
 The German Aerospace Center (DLR) makes available all content in this plug-in ("Content").  Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the Eclipse Public License Version 2.0 ("EPL").  A copy of the EPL is available at https://www.eclipse.org/legal/epl-2.0. For purposes of the EPL, "Program" will mean the Content.
 
 If you did not receive this Content directly from German Aerospace Center (DLR), the Content is being redistributed by another party ("Redistributor") and different terms and conditions may apply to your use of any object code in the Content.  Check the Redistributor's license that was provided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise indicated below, the terms and conditions of the EPL still apply to this content.<p>
+
+## DLR trade mark and copyrighted material other than S/W
+
+The DLR trade mark (as the word mark DLR or as combination DLR with the DLR Logo) is a registered and protected trade mark and may not be used without DLR´s prior written permission. 
+
+Copyrighted content other than the S/W provided under the indicated Eclipse License Conditions such as images, photographs, videos and texts which are indicated as being under DLR´s copyright through copyright notice (i.g. © DLR 2020) are provided for use under the Terms of use as provided for on DLRs webpage <https://www.dlr.de>.
+
 
 ## Third Party Licenses
 
