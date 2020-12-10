@@ -59,7 +59,7 @@ jobs:
   deploy:
     name: Build, Assemble and Deploy
     runs-on: ubuntu-18.04
-    needs: [spotbugs, surefire, checkstyle]
+    needs: [verify]
     
     steps:
       # --------------------------------------------
