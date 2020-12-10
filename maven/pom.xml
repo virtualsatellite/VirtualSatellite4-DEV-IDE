@@ -101,9 +101,9 @@
 				<build.deploy.release>true</build.deploy.release>
 				<build.qualifier>'r'yyyyMMddHHmm</build.qualifier>
 				<maven.build.timestamp.format>'r'yyyyMMddHHmm</maven.build.timestamp.format>
-				<build.folder.type>release/${build.version}/${TRAVIS_BUILD_NUMBER}</build.folder.type>
-				<build.file.win32>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Win32.zip</build.file.win32>
-				<build.file.linux>VirSat_IDE_Release_${build.version}_${TRAVIS_BUILD_NUMBER}_Linux.tar.gz</build.file.linux>
+				<build.folder.type>release/${build.version}/${env.github_sha}</build.folder.type>
+				<build.file.win32>VirSat_IDE_Release_${build.version}_${env.github_sha}_Win32.zip</build.file.win32>
+				<build.file.linux>VirSat_IDE_Release_${build.version}_${env.github_sha}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/4763</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
