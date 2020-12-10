@@ -1,0 +1,113 @@
+# --------------------------------------------
+# This is a basic workflow to help you get started with Actions
+# --------------------------------------------
+name: General Build and Deploy
+
+on:
+  # --------------------------------------------
+  # Controls when the automatic build job will be run.
+  # By default uses the default branch. Runs at 03:00 UTC.
+  # --------------------------------------------
+  schedule:
+    - cron: '17 4 * * *'
+      
+  # --------------------------------------------
+  # Run this workflow every time a new commit pushed to the repository
+  # --------------------------------------------
+  push:
+  
+  # --------------------------------------------
+  # Run this workflow every time a pull request is created or commited to it
+  # --------------------------------------------
+  pull_request:
+    branches:
+      - '**'
+
+env:
+  # -------------------------------------------------------------
+  # Setting up locale to have correct keyboard mapping for swtbot
+  # -------------------------------------------------------------
+  LANG: "en_US.UTF-8"
+# --------------------------------------------
+# Defines the list of jobs
+# --------------------------------------------
+jobs:
+  # --------------------------------------------
+  # Verify Job
+  #---------------------------------------------
+  verify:
+    name: Verify
+    runs-on: ubuntu-18.04
+    
+    steps:
+      # --------------------------------------------
+      # Checks out a copy of the repository
+      # --------------------------------------------
+      - name: Setup - Checkout code
+        uses: actions/checkout@v2
+        
+      # --------------------------------------------
+      # Run a quick sanity check if all commits are
+      # handed in by known users
+      #---------------------------------------------
+      - name: Verify - Authors Sanity Check
+        uses: virtualsatellite/ci-actions/ci-verify-authors-action@master
+
+  # -----------------------------------------------------
+  # Build, Assemble and Deploy Job
+  # -----------------------------------------------------
+  deploy:
+    name: Build, Assemble and Deploy
+    runs-on: ubuntu-18.04
+    needs: [spotbugs, surefire, checkstyle]
+    
+    steps:
+      # --------------------------------------------
+      # Checks out a copy of your repository
+      # --------------------------------------------
+      - name: Setup - Checkout code
+        uses: actions/checkout@v2
+
+      # --------------------------------------------
+      # Setup caching for m2 repository
+      # --------------------------------------------
+      - name: Setup - Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository/
+          key: ${{ runner.os }}-local-maven-deploy-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-local-maven-deploy-
+            ${{ runner.os }}-local-maven-
+
+      # --------------------------------------------
+      # Perform various setup operations
+      # --------------------------------------------
+      - name: Setup - Prepare OS
+        uses: virtualsatellite/ci-actions/ci-setup-action@master
+
+      # --------------------------------------------
+      # Development and Feature branches
+      # --------------------------------------------
+      - name: Build - Build and Deploy Decision
+        id: build_decision
+        uses: virtualsatellite/ci-actions/ci-build-decision-action@master
+
+      # --------------------------------------------
+      # Development and Feature branches
+      # --------------------------------------------
+      - name: Build - Assemble
+        uses: virtualsatellite/ci-actions/ci-maven-build-action@master
+        with:
+          build_job: assemble
+          build_profile: ${{ steps.build_decision.outputs.build_type }}
+     
+      # ---------------------------------------------
+      # Deploying to github releases
+      # --------------------------------------------
+      - name: Build - Deploy GH
+        uses: virtualsatellite/ci-actions/ci-deploy-gh-product-action@master
+        with:
+          build_profile: ${{ steps.build_decision.outputs.build_type }}
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.build_decision.outputs.deploy_type == 'deploy' }}
