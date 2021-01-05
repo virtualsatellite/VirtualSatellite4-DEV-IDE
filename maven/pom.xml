@@ -77,6 +77,7 @@
 				<build.file.linux>VirSat_IDE_Development_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
+				<!-- p2.repo.virsat.url>file:/C:/git/VirtualSatellite4-Core/builds/p2/VirSat4_Dvlm_ConceptIDE/development</p2.repo.virsat.url -->
 				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483/</p2.repo.overtarget.url>
 			</properties>
