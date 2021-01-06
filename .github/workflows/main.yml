@@ -79,7 +79,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-local-m2-deploy-
             ${{ runner.os }}-local-m2-
-          run: rm -rf ~/.m2/repository/de/dlr/sc/virsat
+        run: rm -rf ~/.m2/repository/de/dlr/sc/virsat
          
       # --------------------------------------------
       # Setup caching for p2 repository
