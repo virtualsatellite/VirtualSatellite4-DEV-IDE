@@ -236,24 +236,6 @@
 			<layout>p2</layout>
 		</repository> 
 
-		<repository>
-			<id>asciidoc-editor</id>
-			<url>https://dl.bintray.com/de-jcup/asciidoctoreditor</url>
-			<layout>p2</layout>
-		</repository> 
-
-		<repository>
-			<id>yaml-editor-feature</id>
-			<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
-			<layout>p2</layout>
-		</repository> 
-
-		<repository>
-			<id>pydev</id>
-			<url>http://www.pydev.org/updates/</url>
-			<layout>p2</layout>
-						</repository> 
-		
 	</repositories>
 
 	<build>
