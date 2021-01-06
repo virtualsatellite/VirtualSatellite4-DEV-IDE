@@ -71,7 +71,7 @@ jobs:
       # --------------------------------------------
       # Setup caching for m2 repository
       # --------------------------------------------
-      - name: Setup - Cache local Maven repository
+      - name: Setup - Cache local m2 repository
         uses: actions/cache@v2
         with:
           path: ~/.m2/repository/
@@ -79,6 +79,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-local-maven-deploy-
             ${{ runner.os }}-local-maven-
+
+      # --------------------------------------------
+      # Setup caching for p2 repository
+      # --------------------------------------------
+      - name: Setup - Cache local p2 repository
+        uses: actions/cache@v2
+        with:
+          path: ./p2Repo
+          key: ${{ runner.os }}-local-p2-deploy-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-local-p2-deploy-
+            ${{ runner.os }}-local-p2-
 
       # --------------------------------------------
       # Perform various setup operations
