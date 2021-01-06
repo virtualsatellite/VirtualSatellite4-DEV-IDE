@@ -79,8 +79,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-local-m2-deploy-
             ${{ runner.os }}-local-m2-
-        run: rm -rf ~/.m2/repository/de/dlr/sc/virsat
-      
+       
       - name: Setup - Clean local m2 repository
         run: rm -rf ~/.m2/repository/de/dlr/sc/virsat
          
