@@ -53,7 +53,7 @@
 							<followStrictOnly>false</followStrictOnly>
 							<includeOptional>true</includeOptional>
 							<includeNonGreedy>true</includeNonGreedy>
-							<latestVersionOnly>true</latestVersionOnly>
+							<latestVersionOnly>false</latestVersionOnly>
 							<mirrorMetadataOnly>false</mirrorMetadataOnly>
 							<compress>true</compress>
 							<append>true</append>
