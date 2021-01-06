@@ -106,12 +106,11 @@
 							<followStrictOnly>false</followStrictOnly>
 							<includeOptional>true</includeOptional>
 							<includeNonGreedy>true</includeNonGreedy>
-							<latestVersionOnly>false</latestVersionOnly>
+							<latestVersionOnly>true</latestVersionOnly>
 							<mirrorMetadataOnly>false</mirrorMetadataOnly>
 							<compress>true</compress>
 							<append>true</append>
 							<includePacked>true</includePacked>
-							
 						</configuration>
 					</plugin>
 				</plugins>

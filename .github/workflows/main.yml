@@ -75,10 +75,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.m2/repository/
-          key: ${{ runner.os }}-local-maven-deploy-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-local-maven-deploy-
-            ${{ runner.os }}-local-maven-
+            ${{ runner.os }}-local-m2-deploy-
+            ${{ runner.os }}-local-m2-
 
       # --------------------------------------------
       # Setup caching for p2 repository
