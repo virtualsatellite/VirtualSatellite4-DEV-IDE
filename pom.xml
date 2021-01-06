@@ -108,7 +108,7 @@
 									<layout>p2</layout>
 								</repository> 
 							</source>
-							<destination>${project.projectDirectory}/../p2Repo</destination>
+							<destination>${project.projectDirectory}/p2Repo</destination>
 							<followStrictOnly>false</followStrictOnly>
 							<includeOptional>true</includeOptional>
 							<includeNonGreedy>true</includeNonGreedy>

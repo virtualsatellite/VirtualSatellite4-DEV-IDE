@@ -172,7 +172,7 @@
 		<repository>
 			<id>maven-to-eclipse-tycho-feature</id>
 			<!--  Execute maven with the profile "prepare-m2e-repo" first to setup the repository -->
-			<url>${project.baseUri}../../p2Repo</url>
+			<url>${project.baseUri}../p2Repo</url>
 			<layout>p2</layout>
 		</repository> 
 	
