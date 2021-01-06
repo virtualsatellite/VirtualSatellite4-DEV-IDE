@@ -94,6 +94,12 @@ jobs:
         uses: virtualsatellite/ci-actions/ci-build-decision-action@master
 
       # --------------------------------------------
+      # Prepare p2 Repos
+      # --------------------------------------------
+      - name: Build - Prepare p2 repo
+        run: mvn install -P prepare-m2e-repo -B -V
+
+      # --------------------------------------------
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Assemble

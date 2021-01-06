@@ -1,3 +1,4 @@
+/repository/
 /builds/
 **/target/
 **/*._trace
