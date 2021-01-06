@@ -194,6 +194,12 @@
 			<layout>p2</layout>
 		</repository>
 		
+		<repository>
+			<id>gitlab-mylyn-feature</id>
+			<url>https://pweingardt.github.io/mylyn-gitlab/</url>
+			<layout>p2</layout>
+		</repository> 
+		
 	</repositories>
 
 	<build>
