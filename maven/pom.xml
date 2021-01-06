@@ -195,44 +195,9 @@
 		</repository>
 		
 		<repository>
+			<!-- This repository cannot be read by the cache -->
 			<id>gitlab-mylyn-feature</id>
 			<url>https://pweingardt.github.io/mylyn-gitlab/</url>
-			<layout>p2</layout>
-		</repository> 
-
-		<repository>
-			<id>license-feature</id>
-			<url>http://download.eclipse.org/cbi/updates/license/</url>
-			<layout>p2</layout>
-		</repository>
-
-		<repository>
-			<id>m2t-JET-feature</id>
-			<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
-			<layout>p2</layout>
-		</repository>
-
-		<repository>
-			<id>edapt-feature</id>
-			<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
-			<layout>p2</layout>
-		</repository>
-
-		<repository>
-			<id>checkstyle-feature</id>
-			<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
-			<layout>p2</layout>
-		</repository> 
-		
-		<repository>
-			<id>spotbugs-feature</id>
-			<url>https://spotbugs.github.io/eclipse-latest/</url>
-			<layout>p2</layout>
-		</repository> 
-
-		<repository>
-			<id>m2eclipse</id>
-			<url>https://download.eclipse.org/technology/m2e/releases/</url>
 			<layout>p2</layout>
 		</repository> 
 		
