@@ -5,11 +5,11 @@ Eclipse based Developer IDE for Virtual Satellite 4 Developers.
 ## Project Status
 
 
-Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=development)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Development* build.
+Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=development)](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build) for *Development* build.
 
-Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=integration)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Integration* build.
+Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=integration)](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build) for *Integration* build.
 
-Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=master)](https://travis-ci.com/virtualsatellite/VirtualSatellite4-DEV-IDE) for *Master* build.
+Status [![Build Status](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build/badge.svg?branch=master)](https://github.com/virtualsatellite/VirtualSatellite4-DEV-IDE/workflows/Build) for *Master* build.
 
 ## Purpose
 
