@@ -1,13 +1,11 @@
-<!-- *******************************************************************************
-     * Copyright (c) 2008-2019 German Aerospace Center (DLR), Simulation and Software Technology, Germany.
-     *
-     * This program and the accompanying materials are made available under the
-     * terms of the Eclipse Public License 2.0 which is available at
-     * http://www.eclipse.org/legal/epl-2.0.
-     *
-     * SPDX-License-Identifier: EPL-2.0
-     ******************************************************************************* -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- ******************************************************************************* 
+	* Copyright (c) 2008-2019 German Aerospace Center (DLR), Simulation and Software 
+	Technology, Germany. * * This program and the accompanying materials are 
+	made available under the * terms of the Eclipse Public License 2.0 which 
+	is available at * http://www.eclipse.org/legal/epl-2.0. * * SPDX-License-Identifier: 
+	EPL-2.0 ******************************************************************************* -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
@@ -15,14 +13,109 @@
 	<version>4.12.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<modules>
-		<module>de.dlr.sc.virsat.ide.product</module>
-		
-		
-		<module>de.dlr.sc.virsat.ide.license.feature</module>
-		<module>de.dlr.sc.virsat.ide.docs.feature</module>
+	<profiles>
+		<profile>
+			<id>product</id>
+			<modules>
+				<module>de.dlr.sc.virsat.ide.product</module>
+				<module>de.dlr.sc.virsat.ide.license.feature</module>
+				<module>de.dlr.sc.virsat.ide.docs.feature</module>
+				<module>de.dlr.sc.virsat.ide.branding.ui</module>
+				<module>de.dlr.sc.virsat.ide.branding.feature</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>prepare-m2e-repo</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-p2-extras-plugin</artifactId>
+						<version>1.7.0</version>
+						<executions>
+							<execution>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>mirror</goal>
+								</goals>
+							</execution>
+						</executions>
 
-		<module>de.dlr.sc.virsat.ide.branding.ui</module>
-		<module>de.dlr.sc.virsat.ide.branding.feature</module>	
-	</modules>
+						<configuration>
+							<source>
+						
+								<repository>
+									<id>license-feature</id>
+									<url>http://download.eclipse.org/cbi/updates/license/</url>
+									<layout>p2</layout>
+								</repository>
+						
+								<repository>
+									<id>m2t-JET-feature</id>
+									<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
+									<layout>p2</layout>
+								</repository>
+						
+								<repository>
+									<id>edapt-feature</id>
+									<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
+									<layout>p2</layout>
+								</repository>
+						
+								<repository>
+									<id>checkstyle-feature</id>
+									<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
+									<layout>p2</layout>
+								</repository> 
+								
+								<repository>
+									<id>spotbugs-feature</id>
+									<url>https://spotbugs.github.io/eclipse-latest/</url>
+									<layout>p2</layout>
+								</repository> 
+						
+								<repository>
+									<id>m2eclipse</id>
+									<url>https://download.eclipse.org/technology/m2e/releases/</url>
+									<layout>p2</layout>
+								</repository> 
+													
+								<repository>
+									<url>https://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST</url>
+									<layout>p2</layout>
+								</repository>
+								
+								<repository>
+									<id>asciidoc-editor</id>
+									<url>https://dl.bintray.com/de-jcup/asciidoctoreditor</url>
+									<layout>p2</layout>
+								</repository> 
+						
+								<repository>
+									<id>yaml-editor-feature</id>
+									<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
+									<layout>p2</layout>
+								</repository> 
+						
+								<repository>
+									<id>pydev</id>
+									<url>http://www.pydev.org/updates/</url>
+									<layout>p2</layout>
+								</repository> 
+							</source>
+							<destination>${project.projectDirectory}/p2Repo</destination>
+							<followStrictOnly>false</followStrictOnly>
+							<includeOptional>true</includeOptional>
+							<includeNonGreedy>true</includeNonGreedy>
+							<latestVersionOnly>false</latestVersionOnly>
+							<mirrorMetadataOnly>false</mirrorMetadataOnly>
+							<compress>true</compress>
+							<append>true</append>
+							<includePacked>true</includePacked>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project> 
