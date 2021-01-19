@@ -70,7 +70,8 @@
 								
 								<repository>
 									<id>spotbugs-feature</id>
-									<url>https://spotbugs.github.io/eclipse-latest/</url>
+									<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
+									<url>https://spotbugs.github.io/eclipse/</url>
 									<layout>p2</layout>
 								</repository> 
 						
