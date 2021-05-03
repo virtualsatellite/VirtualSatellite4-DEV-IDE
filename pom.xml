@@ -81,15 +81,17 @@
 									<layout>p2</layout>
 								</repository>
 								
+								<!-- 
 								<repository>
 									<id>asciidoc-editor</id>
 									<url>https://dl.bintray.com/de-jcup/asciidoctoreditor</url>
 									<layout>p2</layout>
 								</repository> 
-						
+								 -->
+							
 								<repository>
 									<id>yaml-editor-feature</id>
-									<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
+									<url>https://de-jcup.github.io/update-site-eclipse-yaml-editor/update-site/</url>
 									<layout>p2</layout>
 								</repository> 
 						
