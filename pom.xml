@@ -62,7 +62,7 @@
 									<layout>p2</layout>
 								</repository>
 							
-								<!-- 
+								<!-- Bintray got shutdown
 								<repository>
 									<id>checkstyle-feature</id>
 									<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
@@ -81,7 +81,7 @@
 									<layout>p2</layout>
 								</repository>
 								
-								<!-- 
+								<!-- Bintray got shutdown
 								<repository>
 									<id>asciidoc-editor</id>
 									<url>https://dl.bintray.com/de-jcup/asciidoctoreditor</url>
@@ -89,12 +89,14 @@
 								</repository> 
 								 -->
 							
+								<!--  Bintray got shutdown
 								<repository>
 									<id>yaml-editor-feature</id>
-									<url>https://de-jcup.github.io/update-site-eclipse-yaml-editor/update-site/</url>
+									<url>https://dl.bintray.com/de-jcup/yamleditor/</url>
 									<layout>p2</layout>
 								</repository> 
-						
+								-->
+								
 								<repository>
 									<id>pydev</id>
 									<url>http://www.pydev.org/updates/</url>

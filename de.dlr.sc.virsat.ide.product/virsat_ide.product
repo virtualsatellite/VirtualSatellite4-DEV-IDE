@@ -112,7 +112,6 @@ This product includes software developed by other open source projects including
       <feature id="org.eclipse.xtext.sdk" installMode="root"/>
       <feature id="com.github.spotbugs.plugin.eclipse" installMode="root"/>
       <feature id="org.sonatype.tycho.m2e.feature" installMode="root"/>
-      <feature id="de.jcup.yamleditor" installMode="root"/>
       <feature id="org.python.pydev.feature" installMode="root"/>
    </features>
 
