@@ -61,12 +61,14 @@
 									<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
 									<layout>p2</layout>
 								</repository>
-						
+							
+								<!-- 
 								<repository>
 									<id>checkstyle-feature</id>
 									<url>https://dl.bintray.com/eclipse-cs/eclipse-cs/8.26.0/</url>
 									<layout>p2</layout>
 								</repository> 
+								 -->
 								
 								<repository>
 									<id>m2eclipse</id>
