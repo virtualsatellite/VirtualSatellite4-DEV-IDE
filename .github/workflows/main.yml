@@ -51,7 +51,7 @@ jobs:
       # handed in by known users
       #---------------------------------------------
       - name: Verify - Authors Sanity Check
-        uses: virtualsatellite/ci-actions/ci-verify-authors-action@v2
+        uses: virtualsatellite/ci-actions/ci-verify-authors-action@v4
 
   # -----------------------------------------------------
   # Build, Assemble and Deploy Job
@@ -99,14 +99,14 @@ jobs:
       # Perform various setup operations
       # --------------------------------------------
       - name: Setup - Prepare OS
-        uses: virtualsatellite/ci-actions/ci-setup-action@v2
+        uses: virtualsatellite/ci-actions/ci-setup-action@v4
 
       # --------------------------------------------
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Build and Deploy Decision
         id: build_decision
-        uses: virtualsatellite/ci-actions/ci-build-decision-action@v2
+        uses: virtualsatellite/ci-actions/ci-build-decision-action@v4
 
       # --------------------------------------------
       # Prepare p2 Repos
@@ -118,7 +118,7 @@ jobs:
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Assemble
-        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v2
+        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v4
         with:
           build_job: assemble
           build_profile: ${{ steps.build_decision.outputs.build_type }}
