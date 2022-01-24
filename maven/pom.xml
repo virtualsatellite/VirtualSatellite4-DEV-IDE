@@ -204,7 +204,7 @@
 		<repository>
 			<id>spotbugs-feature</id>
 			<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
-			<url>https://spotbugs.github.io/eclipse/</url>
+			<url>https://spotbugs.github.io/eclipse-stable-latest/</url>
 			<layout>p2</layout>
 		</repository> 
 		
