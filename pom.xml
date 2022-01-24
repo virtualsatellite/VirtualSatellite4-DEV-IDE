@@ -118,5 +118,11 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<id>doc</id>
+		</profile>	
+		<profile>
+			<id>deploy</id>
+		</profile>	
 	</profiles>
 </project> 
