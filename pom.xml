@@ -120,9 +120,13 @@
 		</profile>
 		<profile>
 			<id>doc</id>
+			<!-- Do documentation building if necessary -->
 		</profile>	
 		<profile>
 			<id>deploy</id>
+			<modules>
+				<module>de.dlr.sc.virsat.ide.product</module>
+			</modules>
 		</profile>	
 	</profiles>
 </project> 
