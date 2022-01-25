@@ -33,11 +33,10 @@ Virtual Satellite is based on Java / Eclipse and provides an installable feature
 3. Import all projects and working-sets via the ProjectSet file in _de.dlr.sc.virsat.ide/projectSet_
 6. Execute the Virtual Satellite DEV IDE build from _de.dlr.sc.virsat.ide/launchers_
 
-## Travis CI and Releases
+## Github Actions and Releases
+Github Actions is set-up to start a build job for every branch and every new commit to the repository. It executes all relevant tests such as jUnit, SWTBot, Checkstyle, SpotBugs, etc. Making a successful pull-request into development requires all tests to pass.
 
-Tarvis CI is set-up to start a build job for every branch and every new commit to the repository. It executes all relevant tests such as jUnit, SWTBot, Checkstyle, SpotBugs, etc. Making a successful pull-request into development requires all tests to pass.
-
-Starting a Travis CI job on development or integration deploys all relevant artifacts.
+Starting a Github Actions job on development or integration deploys all relevant artifacts.
 
 For creating a new release, create a tag starting with *Release_* on the *master* branch. All artifacts are automatically deployed.
 
