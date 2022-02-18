@@ -12,7 +12,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-	<version>4.13.0-SNAPSHOT</version>
+	<version>4.14.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -20,7 +20,7 @@
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.13.0</build.version>
+		<build.version>4.14.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
 		<maven.build.timestamp.format>'t'yyyyMMddHHmm</maven.build.timestamp.format>
 
@@ -106,7 +106,7 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${env.GITHUB_SHA}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${env.GITHUB_SHA}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/08b129cb4888ebf263db82a60f3f06a7bab970b9</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2ebf0c6c75ba40bdfc379fa2356f19b74c3db491</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
 				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483</p2.repo.overtarget.url>
 			</properties>
@@ -204,7 +204,7 @@
 		<repository>
 			<id>spotbugs-feature</id>
 			<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
-			<url>https://spotbugs.github.io/eclipse/</url>
+			<url>https://spotbugs.github.io/eclipse-stable-latest/</url>
 			<layout>p2</layout>
 		</repository> 
 		
