@@ -64,7 +64,7 @@
 							
 								<repository>
 									<id>checkstyle-feature</id>
-									<url>https://checkstyle.org/eclipse-cs-update-site/eclipse-cs/8.26.0/</url>
+									<url>https://checkstyle.org/eclipse-cs-update-site/</url>
 									<layout>p2</layout>
 								</repository> 
 								
