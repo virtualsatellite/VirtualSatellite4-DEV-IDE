@@ -57,18 +57,18 @@ This product includes software developed by other open source projects including
    <intro introId="org.eclipse.ui.intro.universal"/>
 
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
-      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</macos>
-      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</solaris>
-      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</macos>
+      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</solaris>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</windows>
    </vm>
 
    <plugins>
    </plugins>
 
    <features>
-      <feature id="org.eclipse.epp.package.rcp.feature"/>
-      <feature id="org.eclipse.epp.package.common.feature"/>
+      <feature id="org.eclipse.epp.package.rcp.feature" version="4.22.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.22.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.jdt"/>
@@ -79,23 +79,18 @@ This product includes software developed by other open source projects including
       <feature id="org.eclipse.e4.core.tools.feature" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>
       <feature id="org.eclipse.egit" installMode="root"/>
-      <feature id="org.eclipse.egit.mylyn" installMode="root"/>
+      <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.feature" installMode="root"/>
+      <feature id="org.eclipse.m2e.pde.feature" installMode="root"/>
+      <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.logback.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.bugzilla_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.context_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.gerrit.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.git" installMode="root"/>
-      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
-      <feature id="org.eclipse.mylyn.ide_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.java_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.pde_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.rap.tools.feature" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse.gef" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse" installMode="root"/>
       <feature id="org.eclipse.swtbot.ide" installMode="root"/>
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
+      <feature id="org.eclipse.passage.ldc.feature" installMode="root"/>
       <feature id="de.dlr.sc.virsat.ide.branding.feature" installMode="root"/>
       <feature id="de.dlr.sc.virsat.model.concept.feature" installMode="root"/>
       <feature id="de.dlr.sc.overtarget.feature" installMode="root"/>
