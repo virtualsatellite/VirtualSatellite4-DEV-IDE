@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>1.7.0</tycho-version>
+		<tycho-version>2.6.0</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -45,8 +45,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>2020-06 Release</eclipse.simultaneous.release.name>
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2020-06/</eclipse.simultaneous.release.repository>
+		<eclipse.simultaneous.release.name>2020-06 Release</eclipse.simultaneous.release.name>
+		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2020-06/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
