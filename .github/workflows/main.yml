@@ -100,7 +100,8 @@ jobs:
       # --------------------------------------------
       - name: Setup - Prepare OS
         uses: virtualsatellite/ci-actions/ci-setup-action@v5-beta
-        jdk: 11
+        with:
+           jdk: 11
 
       # --------------------------------------------
       # Development and Feature branches
