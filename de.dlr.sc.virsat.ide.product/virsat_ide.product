@@ -33,7 +33,7 @@ This product includes software developed by other open source projects including
 -showsplash de.dlr.sc.virsat.ide.branding.ui
 --launcher.defaultAction openFile
       </programArgs>
-      <vmArgs>-Dosgi.requiredJavaVersion=1.8
+      <vmArgs>-Dosgi.requiredJavaVersion=11
 -Xms256m
 -Xmx1024m
 -XX:+UseG1GC
