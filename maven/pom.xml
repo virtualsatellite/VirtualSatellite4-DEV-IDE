@@ -216,7 +216,7 @@
 		
 		<repository>
 			<id>github-mylyn-connector-feature</id>
-			<url>https://download.eclipse.org/egit/github/updates/</url>
+			<url>https://download.eclipse.org/egit/github/updates-nightly/</url>
 			<layout>p2</layout>
 		</repository> 
 	</repositories>
