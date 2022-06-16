@@ -45,8 +45,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>2020-06 Release</eclipse.simultaneous.release.name>
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2020-06/</eclipse.simultaneous.release.repository>
+		<eclipse.simultaneous.release.name>2021-12 Release</eclipse.simultaneous.release.name>
+		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2021-12/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
