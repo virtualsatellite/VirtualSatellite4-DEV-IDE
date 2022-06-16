@@ -208,6 +208,11 @@
 			<layout>p2</layout>
 		</repository> 
 		
+		<repository>
+			<id>mylyn-feature</id>
+			<url>https://download.eclipse.org/mylyn/releases/3.25/</url>
+			<layout>p2</layout>
+		</repository> 
 	</repositories>
 
 	<build>
