@@ -67,8 +67,8 @@ This product includes software developed by other open source projects including
    </plugins>
 
    <features>
-      <feature id="org.eclipse.epp.package.rcp.feature" version="4.22.0.qualifier"/>
-      <feature id="org.eclipse.epp.package.common.feature" version="4.22.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.rcp.feature" version="4.24.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.24.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.jdt"/>
