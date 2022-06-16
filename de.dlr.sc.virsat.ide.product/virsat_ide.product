@@ -89,6 +89,11 @@ This product includes software developed by other open source projects including
       <feature id="org.eclipse.mylyn.context_feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.gerrit.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.git" installMode="root"/>
+      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
+      <feature id="org.eclipse.mylyn.ide_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.java_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.pde_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.rap.tools.feature" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse.gef" installMode="root"/>
