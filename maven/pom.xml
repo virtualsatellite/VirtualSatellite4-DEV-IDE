@@ -45,8 +45,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-		<eclipse.simultaneous.release.name>2022-06 Release</eclipse.simultaneous.release.name>
-		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2022-06/</eclipse.simultaneous.release.repository>
+		<eclipse.simultaneous.release.name>2022-03 Release</eclipse.simultaneous.release.name>
+		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2022-03/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -216,7 +216,7 @@
 		
 		<repository>
 			<id>github-mylyn-connector-feature</id>
-			<url>https://download.eclipse.org/egit/github/updates-nightly/</url>
+			<url>https://download.eclipse.org/egit/github/updates/</url>
 			<layout>p2</layout>
 		</repository> 
 	</repositories>
