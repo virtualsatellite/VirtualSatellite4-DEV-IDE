@@ -27,7 +27,6 @@ by German Aerospace Center (DLR e.V.)
 
    <requires>
       <import feature="org.eclipse.epp.mpc"/>
-      <import feature="org.eclipse.epp.logging.aeri.feature"/>
       <import feature="org.eclipse.oomph.setup"/>
       <import feature="de.dlr.sc.virsat.ide.license.feature" version="4.14.0.qualifier"/>
       <import feature="de.dlr.sc.virsat.ide.docs.feature" version="4.14.0.qualifier"/>
