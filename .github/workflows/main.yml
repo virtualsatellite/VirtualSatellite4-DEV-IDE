@@ -126,7 +126,7 @@ jobs:
           build_profile: ${{ steps.build_decision.outputs.build_type }}
           
       # --------------------------------------------
-      # Upload SWTBout screenshots to github artifacts
+      # Upload deployable applications
       # --------------------------------------------
       - name: Build - Upload Build Artifacts
         uses: actions/upload-artifact@v2
