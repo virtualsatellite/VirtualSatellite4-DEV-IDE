@@ -99,7 +99,7 @@ jobs:
       # Perform various setup operations
       # --------------------------------------------
       - name: Setup - Prepare OS
-        uses: virtualsatellite/ci-actions/ci-setup-action@v5-beta
+        uses: virtualsatellite/ci-actions/ci-setup-action@v5
         with:
            jdk: 11
 
@@ -120,7 +120,7 @@ jobs:
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Assemble
-        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v5-beta
+        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v5
         with:
           build_job: assemble
           build_profile: ${{ steps.build_decision.outputs.build_type }}
