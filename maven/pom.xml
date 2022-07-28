@@ -12,15 +12,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
-	<version>4.15.0-SNAPSHOT</version>
+	<version>4.14.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>1.7.0</tycho-version>
+		<tycho-version>2.6.0</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<build.version>4.15.0</build.version>
+		<build.version>4.14.0</build.version>
 		<build.qualifier>'t'yyyyMMddHHmm</build.qualifier>
 		<maven.build.timestamp.format>'t'yyyyMMddHHmm</maven.build.timestamp.format>
 
@@ -36,7 +36,7 @@
 		<build.deploy.release>false</build.deploy.release>
 		
 		<!-- OverTarget -->
-		<overtarget.version>1.2.1</overtarget.version>
+		<overtarget.version>1.4.0</overtarget.version>
 
 		<!-- Sonar Code Coverage -->
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
@@ -45,8 +45,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-	    <eclipse.simultaneous.release.name>2020-03 Release</eclipse.simultaneous.release.name>
-	    <eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2022-03/</eclipse.simultaneous.release.repository>
+		<eclipse.simultaneous.release.name>2022-03 Release</eclipse.simultaneous.release.name>
+		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2022-03/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -79,7 +79,7 @@
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/development/</p2.repo.virsat.url>
 				<!-- p2.repo.virsat.url>file:/C:/git/VirtualSatellite4-Core/builds/p2/VirSat4_Dvlm_ConceptIDE/development</p2.repo.virsat.url -->
 				<p2.repo.overtarget.id>Overtarget-Feature-Development</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/9014ba468eeed12f9b9624b20bf8feef1f513fdd//</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -93,7 +93,7 @@
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Integration</p2.repo.virsat.id>
 				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/integration/${build.version}/</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Integration</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483/</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/9014ba468eeed12f9b9624b20bf8feef1f513fdd//</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 		<profile>
@@ -106,9 +106,9 @@
 				<build.file.win32>VirSat_IDE_Release_${build.version}_${env.GITHUB_SHA}_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Release_${build.version}_${env.GITHUB_SHA}_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Release</p2.repo.virsat.id>
-				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/ebcfe996102db4a8b251736cfbf2afd7dece51fb</p2.repo.virsat.url>
+				<p2.repo.virsat.url>https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/${build.version}/2ebf0c6c75ba40bdfc379fa2356f19b74c3db491</p2.repo.virsat.url>
 				<p2.repo.overtarget.id>Overtarget-Feature-Release</p2.repo.overtarget.id>
-				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/483</p2.repo.overtarget.url>
+				<p2.repo.overtarget.url>https://sourceforge.net/projects/overtarget/files/release/${overtarget.version}/9014ba468eeed12f9b9624b20bf8feef1f513fdd/</p2.repo.overtarget.url>
 			</properties>
 		</profile>
 
@@ -208,6 +208,17 @@
 			<layout>p2</layout>
 		</repository> 
 		
+		<repository>
+			<id>mylyn-feature</id>
+			<url>https://download.eclipse.org/mylyn/releases/3.25/</url>
+			<layout>p2</layout>
+		</repository> 
+		
+		<repository>
+			<id>github-mylyn-connector-feature</id>
+			<url>https://download.eclipse.org/egit/github/updates/</url>
+			<layout>p2</layout>
+		</repository> 
 	</repositories>
 
 	<build>
