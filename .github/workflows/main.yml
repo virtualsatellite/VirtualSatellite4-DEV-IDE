@@ -37,7 +37,7 @@ jobs:
   #---------------------------------------------
   verify:
     name: Verify
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     
     steps:
       # --------------------------------------------
@@ -58,7 +58,7 @@ jobs:
   # -----------------------------------------------------
   deploy:
     name: Build, Assemble and Deploy
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     needs: [verify]
     
     steps:
@@ -99,7 +99,9 @@ jobs:
       # Perform various setup operations
       # --------------------------------------------
       - name: Setup - Prepare OS
-        uses: virtualsatellite/ci-actions/ci-setup-action@v4
+        uses: virtualsatellite/ci-actions/ci-setup-action@v5
+        with:
+           jdk: 11
 
       # --------------------------------------------
       # Development and Feature branches
@@ -118,10 +120,22 @@ jobs:
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Assemble
-        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v4
+        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v5
         with:
           build_job: assemble
           build_profile: ${{ steps.build_decision.outputs.build_type }}
+          
+      # --------------------------------------------
+      # Upload deployable applications
+      # --------------------------------------------
+      - name: Build - Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Deployable Applications
+          path: |
+            deploy/**/*.zip
+            deploy/**/*.tar.gz
+          retention-days: 3
      
       # ---------------------------------------------
       # Deploying to github releases
