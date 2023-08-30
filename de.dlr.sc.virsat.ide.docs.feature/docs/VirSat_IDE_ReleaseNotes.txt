@@ -1,6 +1,17 @@
 VirSat IDE Release Notes
 -------------------------
 
+Release 4.16.0  (31th August 2023)
+------------------------------------
+
+New Features:
+    Added Concept language and generators of Virtual Satellite Core 4.16.0
+    
+Usability Updates:
+    Update generated plugin dependencies to match latest depency location
+	    
+Fixed Bugs:
+
 Release 4.14.0  (18th February 2022)
 ------------------------------------
 
