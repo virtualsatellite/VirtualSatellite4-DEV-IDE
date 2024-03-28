@@ -69,17 +69,6 @@
 								</repository> 
 								
 								<repository>
-									<id>m2eclipse</id>
-									<url>https://archive.eclipse.org/technology/m2e/releases/1.11/</url>
-									<layout>p2</layout>
-								</repository> 
-													
-								<repository>
-									<url>https://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST</url>
-									<layout>p2</layout>
-								</repository>
-								
-								<repository>
 									<id>asciidoc-editor</id>
 									<url>https://de-jcup.github.io/update-site-eclipse-asciidoctor-editor/update-site/</url>
 									<layout>p2</layout>

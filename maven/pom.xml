@@ -7,8 +7,7 @@
      *
      * SPDX-License-Identifier: EPL-2.0
      ******************************************************************************* -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dlr.sc.virsat.ide</groupId>
 	<artifactId>de.dlr.sc.virsat.ide.parent</artifactId>
@@ -16,7 +15,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>2.6.0</tycho-version>
+		<tycho-version>4.0.7</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -34,7 +33,7 @@
 		<build.folder.type>test</build.folder.type>
 		<build.file.zip>VirSat_IDE_Test.zip</build.file.zip>
 		<build.deploy.release>false</build.deploy.release>
-		
+
 		<!-- OverTarget -->
 		<overtarget.version>1.4.0</overtarget.version>
 
@@ -45,8 +44,8 @@
 		<sonar.jacoco.version>0.7.7.201606060606</sonar.jacoco.version>
 
 		<eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
-		<eclipse.simultaneous.release.name>2022-03 Release</eclipse.simultaneous.release.name>
-		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2022-03/</eclipse.simultaneous.release.repository>
+		<eclipse.simultaneous.release.name>2024-03 Release</eclipse.simultaneous.release.name>
+		<eclipse.simultaneous.release.repository>http://download.eclipse.org/releases/2024-03/</eclipse.simultaneous.release.repository>
 	</properties>
 
 	<profiles>
@@ -66,7 +65,7 @@
 				<build.folder.target.p2>${build.folder.target.secured}/${build.folder.p2}</build.folder.target.p2>
 			</properties>
 		</profile>
-		
+
 		<profile>
 			<id>development</id>
 			<properties>
@@ -170,16 +169,39 @@
 
 	<repositories>
 		<repository>
+			<id>eclipse-simultaneous-release</id>
+			<layout>p2</layout>
+			<url>${eclipse.simultaneous.release.repository}</url>
+		</repository>
+		<repository>
+			<id>license-feature</id>
+			<url>https://download.eclipse.org/cbi/updates/license/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>justj</id> <!-- Keep URL in sync with Oomph setup-->
+			<url>https://download.eclipse.org/justj/jres/17/updates/release/latest/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>justj-epp</id> <!-- Keep URL in sync with Oomph setup-->
+			<url>https://download.eclipse.org/justj/epp/milestone/latest/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<!-- Tycho is insisting on accessing the "upstream" artifact for this Ant, see https://github.com/eclipse-packaging/packages/issues/66
+           To make this work we need to match the repo used in Orbit's build for the repository:
+             https://github.com/eclipse-orbit/orbit-simrel/blob/f6ea491f4ada5d6d6750d8118bf40d9802993376/maven-bnd/tp/MavenBND.target#L1203
+      		-->
+			<id>maven-ant-repository2</id>
+			<url>https://repo.eclipse.org/content/repositories/orbit-approved-artifacts</url>
+		</repository>
+
+		<repository>
 			<id>maven-to-eclipse-tycho-feature</id>
 			<!--  Execute maven with the profile "prepare-m2e-repo" first to setup the repository -->
 			<url>${project.baseUri}../p2Repo</url>
 			<layout>p2</layout>
-		</repository> 
-	
-		<repository>
-			<id>eclipse-simultaneous-release</id>
-			<layout>p2</layout>
-			<url>${eclipse.simultaneous.release.repository}</url>
 		</repository>
 
 		<repository>
@@ -187,38 +209,28 @@
 			<url>${p2.repo.virsat.url}</url>
 			<layout>p2</layout>
 		</repository>
-		
+
 		<repository>
 			<id>${p2.repo.overtarget.id}</id>
 			<url>${p2.repo.overtarget.url}</url>
 			<layout>p2</layout>
 		</repository>
-		
+
+		<!--
 		<repository>
-			<!-- This repository cannot be read by the cache -->
 			<id>gitlab-mylyn-feature</id>
 			<url>https://pweingardt.github.io/mylyn-gitlab/</url>
 			<layout>p2</layout>
-		</repository> 
-		
+		</repository>
+		-->
+
 		<repository>
 			<id>spotbugs-feature</id>
 			<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
 			<url>https://spotbugs.github.io/eclipse-stable-latest/</url>
 			<layout>p2</layout>
-		</repository> 
-		
-		<repository>
-			<id>mylyn-feature</id>
-			<url>https://download.eclipse.org/mylyn/releases/3.25/</url>
-			<layout>p2</layout>
-		</repository> 
-		
-		<repository>
-			<id>github-mylyn-connector-feature</id>
-			<url>https://download.eclipse.org/egit/github/updates/</url>
-			<layout>p2</layout>
-		</repository> 
+		</repository>
+
 	</repositories>
 
 	<build>
@@ -228,31 +240,6 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<includePackedArtifacts>true</includePackedArtifacts>
-					<!-- The Parallel Package feature.xml includes a number of other features 
-						that are marked as optional, and unfortunately they seem to be missing in 
-						Mars. Ignoring these options features for now. <dependency-resolution> <optionalDependencies>ignore</optionalDependencies> 
-						</dependency-resolution> -->
-					<environments>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
-					</environments>
-				</configuration>
 			</plugin>
 
 			<plugin>
@@ -325,4 +312,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-</project> 
+</project>
