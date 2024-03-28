@@ -37,7 +37,7 @@ jobs:
   #---------------------------------------------
   verify:
     name: Verify
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     
     steps:
       # --------------------------------------------
@@ -58,7 +58,7 @@ jobs:
   # -----------------------------------------------------
   deploy:
     name: Build, Assemble and Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [verify]
     
     steps:
@@ -101,7 +101,7 @@ jobs:
       - name: Setup - Prepare OS
         uses: virtualsatellite/ci-actions/ci-setup-action@v5
         with:
-           jdk: 11
+           jdk: 17
 
       # --------------------------------------------
       # Development and Feature branches
