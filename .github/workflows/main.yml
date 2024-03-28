@@ -45,6 +45,12 @@ jobs:
       # --------------------------------------------
       - name: Setup - Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup - Java 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: "temurin"
         
       # --------------------------------------------
       # Run a quick sanity check if all commits are
@@ -52,6 +58,7 @@ jobs:
       #---------------------------------------------
       - name: Verify - Authors Sanity Check
         uses: virtualsatellite/ci-actions/ci-verify-authors-action@v4
+
 
   # -----------------------------------------------------
   # Build, Assemble and Deploy Job
@@ -67,6 +74,12 @@ jobs:
       # --------------------------------------------
       - name: Setup - Checkout code
         uses: actions/checkout@v2
+        
+      - name: Setup - Java 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: "temurin"
 
       # --------------------------------------------
       # Setup caching for m2 repository
@@ -100,8 +113,6 @@ jobs:
       # --------------------------------------------
       - name: Setup - Prepare OS
         uses: virtualsatellite/ci-actions/ci-setup-action@v5
-        with:
-           jdk: 11
 
       # --------------------------------------------
       # Development and Feature branches
