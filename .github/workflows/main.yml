@@ -80,6 +80,21 @@ jobs:
         with:
           java-version: 17
           distribution: "temurin"
+      
+      - name: Setup - Maven 3.9.6
+        uses: actions/setup-maven@v7-beta2
+        with:
+           maven-version: "3.9.6"
+
+      - name: Setup - Cache maven download
+        uses: actions/cache@v2
+        with:
+          path: ./maven.tar.gz
+          key: ${{ runner.os }}-local-maven-setup-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-local-maven-setup-
+            ${{ runner.os }}-local-maven-
+      
 
       # --------------------------------------------
       # Setup caching for m2 repository
