@@ -82,7 +82,7 @@ jobs:
           distribution: "temurin"
       
       - name: Setup - Maven 3.9.6
-        uses: actions/setup-maven@v7-beta2
+        uses: virtualsatellite/ci-actions/ci-maven-setup@v7-beta2
         with:
            maven-version: "3.9.6"
 
