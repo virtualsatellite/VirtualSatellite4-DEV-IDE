@@ -57,7 +57,7 @@ jobs:
       # handed in by known users
       #---------------------------------------------
       - name: Verify - Authors Sanity Check
-        uses: virtualsatellite/ci-actions/ci-verify-authors-action@v4
+        uses: virtualsatellite/ci-actions/ci-verify-authors-action@v7-beta2
 
 
   # -----------------------------------------------------
@@ -127,7 +127,7 @@ jobs:
       # Perform various setup operations
       # --------------------------------------------
       - name: Setup - Prepare OS
-        uses: virtualsatellite/ci-actions/ci-setup-action@v5
+        uses: virtualsatellite/ci-actions/ci-setup-action@v7-beta2
         with:
           jdk: no
 
@@ -136,7 +136,7 @@ jobs:
       # --------------------------------------------
       - name: Build - Build and Deploy Decision
         id: build_decision
-        uses: virtualsatellite/ci-actions/ci-build-decision-action@v4
+        uses: virtualsatellite/ci-actions/ci-build-decision-action@v7-beta2
 
       # --------------------------------------------
       # Prepare p2 Repos
@@ -148,7 +148,7 @@ jobs:
       # Development and Feature branches
       # --------------------------------------------
       - name: Build - Assemble
-        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v5
+        uses: virtualsatellite/ci-actions/ci-maven-simple-build-action@v7-beta2
         with:
           build_job: assemble
           build_profile: ${{ steps.build_decision.outputs.build_type }}
@@ -169,7 +169,7 @@ jobs:
       # Deploying to github releases
       # --------------------------------------------
       - name: Build - Deploy GH
-        uses: virtualsatellite/ci-actions/ci-deploy-gh-product-action@v4
+        uses: virtualsatellite/ci-actions/ci-deploy-gh-product-action@v7-beta2
         with:
           build_profile: ${{ steps.build_decision.outputs.build_type }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
