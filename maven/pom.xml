@@ -15,7 +15,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>4.0.7</tycho-version>
+		<tycho-version>3.0.5</tycho-version>
 		<maven.resources.version>2.6</maven.resources.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -173,21 +173,25 @@
 			<layout>p2</layout>
 			<url>${eclipse.simultaneous.release.repository}</url>
 		</repository>
+
 		<repository>
 			<id>license-feature</id>
-			<url>https://download.eclipse.org/cbi/updates/license/</url>
+			<url>http://download.eclipse.org/cbi/updates/license/</url>
 			<layout>p2</layout>
 		</repository>
+
 		<repository>
 			<id>justj</id> <!-- Keep URL in sync with Oomph setup-->
-			<url>https://download.eclipse.org/justj/jres/17/updates/release/latest/</url>
+			<url>https://download.eclipse.org/justj/jres/21/updates/release/latest/</url>
 			<layout>p2</layout>
 		</repository>
+
 		<repository>
 			<id>justj-epp</id> <!-- Keep URL in sync with Oomph setup-->
 			<url>https://download.eclipse.org/justj/epp/milestone/latest/</url>
 			<layout>p2</layout>
 		</repository>
+
 		<repository>
 			<!-- Tycho is insisting on accessing the "upstream" artifact for this Ant, see https://github.com/eclipse-packaging/packages/issues/66
            To make this work we need to match the repo used in Orbit's build for the repository:
@@ -198,21 +202,14 @@
 		</repository>
 
 		<repository>
-			<id>maven-to-eclipse-tycho-feature</id>
-			<!--  Execute maven with the profile "prepare-m2e-repo" first to setup the repository -->
-			<url>${project.baseUri}../p2Repo</url>
+			<id>${p2.repo.overtarget.id}</id>
+			<url>${p2.repo.overtarget.url}</url>
 			<layout>p2</layout>
 		</repository>
 
 		<repository>
 			<id>${p2.repo.virsat.id}</id>
 			<url>${p2.repo.virsat.url}</url>
-			<layout>p2</layout>
-		</repository>
-
-		<repository>
-			<id>${p2.repo.overtarget.id}</id>
-			<url>${p2.repo.overtarget.url}</url>
 			<layout>p2</layout>
 		</repository>
 
@@ -224,13 +221,54 @@
 		</repository>
 		-->
 
+		<!-- Local mirroriring created some issues for the moment. hence it is deactivated -->
+		<!--  Execute maven with the profile "prepare-m2e-repo" first to setup the repository -->
+		<!--
+		<repository>
+			<id>maven-to-eclipse-tycho-feature</id>
+			<url>${project.baseUri}../p2Repo</url>
+			<layout>p2</layout>
+		</repository>
+		-->
+		<!-- added all necessary repos below -->
+
 		<repository>
 			<id>spotbugs-feature</id>
 			<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
 			<url>https://spotbugs.github.io/eclipse-stable-latest/</url>
 			<layout>p2</layout>
 		</repository>
+		
+		<repository>
+			<id>m2t-JET-feature</id>
+			<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
+			<layout>p2</layout>
+		</repository>
 
+		<repository>
+			<id>edapt-feature</id>
+			<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
+			<layout>p2</layout>
+		</repository>
+	
+		<repository>
+			<id>checkstyle-feature</id>
+			<url>https://checkstyle.org/eclipse-cs-update-site/</url>
+			<layout>p2</layout>
+		</repository> 
+		
+		<repository>
+			<id>asciidoc-editor</id>
+			<url>https://de-jcup.github.io/update-site-eclipse-asciidoctor-editor/update-site/</url>
+			<layout>p2</layout>
+		</repository> 
+	
+		<repository>
+			<id>yaml-editor-feature</id>
+			<url>https://de-jcup.github.io/update-site-eclipse-yaml-editor/update-site</url>
+			<layout>p2</layout>
+		</repository> 
+		
 	</repositories>
 
 	<build>
@@ -245,7 +283,6 @@
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
-				<version>${tycho-version}</version>
 				<configuration>
 					<format>${build.qualifier}</format>
 					<archive>
