@@ -131,7 +131,6 @@ This product includes software developed by other open source projects including
       <feature id="org.eclipse.xtext.sdk" installMode="root"/>
       <feature id="com.github.spotbugs.plugin.eclipse" installMode="root"/>
       <feature id="de.jcup.yamleditor" installMode="root"/>
-      <feature id="org.python.pydev.feature" installMode="root"/>
       <feature id="de.jcup.asciidoctoreditor" installMode="root"/>
    </features>
 
@@ -139,7 +138,7 @@ This product includes software developed by other open source projects including
    <repositories>
       <repository location="https://download.eclipse.org/eclipse/updates/4.31" name="" enabled="true" />
       <repository location="https://download.eclipse.org/releases/2024-03" name="" enabled="true" />
-      <repository location="https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/integration/" name="" enabled="true" />
+      <!-- repository location="https://sourceforge.net/projects/virtualsatellite/files/VirtualSatellite4-DVLM/release/" name="" enabled="true" /-->
       <repository location="https://sourceforge.net/projects/overtarget/files/development/" name="" enabled="true" />
    </repositories>
 
