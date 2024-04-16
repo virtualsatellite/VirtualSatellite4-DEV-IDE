@@ -88,7 +88,7 @@ jobs:
            maven-version: "3.9.6"
 
       - name: Setup - Cache maven download
-        uses: actions/cache@v2
+        uses: actions/cache@v4.0.2
         with:
           path: ./maven.tar.gz
           key: ${{ runner.os }}-local-maven-setup-${{ hashFiles('**/pom.xml') }}
@@ -101,8 +101,9 @@ jobs:
       # Setup caching for m2 repository
       # --------------------------------------------
       # - name: Setup - Cache local m2 repository
-      #   uses: actions/cache@v2
+      #   uses: actions/cache@v4.0.2
       #  with:
+      #     cache-always: true
       #     path: ~/.m2/repository/
       #     key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
       #     restore-keys: |
