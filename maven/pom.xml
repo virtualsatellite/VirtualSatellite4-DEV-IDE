@@ -221,53 +221,18 @@
 		</repository>
 		-->
 
-		<!-- Local mirroriring created some issues for the moment. hence it is deactivated -->
-		<!--  Execute maven with the profile "prepare-m2e-repo" first to setup the repository -->
-		<!--
 		<repository>
-			<id>maven-to-eclipse-tycho-feature</id>
+			<id>p2-local-repos</id>
 			<url>${project.baseUri}../p2Repo</url>
 			<layout>p2</layout>
 		</repository>
-		-->
-		<!-- added all necessary repos below -->
-
-		<repository>
-			<id>spotbugs-feature</id>
-			<!-- url>https://spotbugs.github.io/eclipse-latest/</url-->
-			<url>https://spotbugs.github.io/eclipse-stable-latest/</url>
-			<layout>p2</layout>
-		</repository>
 		
 		<repository>
-			<id>m2t-JET-feature</id>
-			<url>http://download.eclipse.org/modeling/m2t/updates/releases/</url>
+			<id>spotbugs</id>
+			<url>https://spotbugs.github.io/eclipse/</url>
 			<layout>p2</layout>
-		</repository>
+		</repository> 
 
-		<repository>
-			<id>edapt-feature</id>
-			<url>https://download.eclipse.org/edapt/releases/12x/120/</url>
-			<layout>p2</layout>
-		</repository>
-	
-		<repository>
-			<id>checkstyle-feature</id>
-			<url>https://checkstyle.org/eclipse-cs-update-site/</url>
-			<layout>p2</layout>
-		</repository> 
-		
-		<repository>
-			<id>asciidoc-editor</id>
-			<url>https://de-jcup.github.io/update-site-eclipse-asciidoctor-editor/update-site/</url>
-			<layout>p2</layout>
-		</repository> 
-	
-		<repository>
-			<id>yaml-editor-feature</id>
-			<url>https://de-jcup.github.io/update-site-eclipse-yaml-editor/update-site</url>
-			<layout>p2</layout>
-		</repository> 
 		
 	</repositories>
 
