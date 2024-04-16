@@ -80,6 +80,7 @@ jobs:
         with:
           java-version: 17
           distribution: "temurin"
+          cache: 'maven'
       
       - name: Setup - Maven 3.9.6
         uses: virtualsatellite/ci-actions/ci-maven-setup@v7-beta2
@@ -99,17 +100,19 @@ jobs:
       # --------------------------------------------
       # Setup caching for m2 repository
       # --------------------------------------------
-      - name: Setup - Cache local m2 repository
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository/
-          key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-local-m2-deploy-
-            ${{ runner.os }}-local-m2-
+      # - name: Setup - Cache local m2 repository
+      #   uses: actions/cache@v2
+      #  with:
+      #     path: ~/.m2/repository/
+      #     key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-local-m2-deploy-
+      #       ${{ runner.os }}-local-m2-
        
       - name: Setup - Clean local m2 repository
-        run: rm -rf ~/.m2/repository/de/dlr/sc/virsat
+        run: |
+           ls -d ~/.m2/repository/*/*/*
+           rm -rf ~/.m2/repository/de/dlr/sc/virsat
          
       # --------------------------------------------
       # Setup caching for p2 repository
