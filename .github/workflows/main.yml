@@ -44,10 +44,10 @@ jobs:
       # Checks out a copy of the repository
       # --------------------------------------------
       - name: Setup - Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
 
       - name: Setup - Java 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4.2.1
         with:
           java-version: 17
           distribution: "temurin"
@@ -73,10 +73,10 @@ jobs:
       # Checks out a copy of your repository
       # --------------------------------------------
       - name: Setup - Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
         
       - name: Setup - Java 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4.2.1
         with:
           java-version: 17
           distribution: "temurin"
@@ -157,7 +157,7 @@ jobs:
       # Upload deployable applications
       # --------------------------------------------
       - name: Build - Upload Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: Deployable Applications
           path: |
