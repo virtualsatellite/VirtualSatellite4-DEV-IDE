@@ -121,6 +121,7 @@ jobs:
         uses: actions/cache@v4.0.2
         with:
           path: ./p2Repo
+          save-always: true
           key: ${{ runner.os }}-local-p2-deploy-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-local-p2-deploy-
