@@ -114,14 +114,14 @@ jobs:
       # --------------------------------------------
       # Setup caching for p2 repository
       # --------------------------------------------
-      - name: Setup - Cache local p2 repository
-        uses: actions/cache@v2
-        with:
-          path: ./p2Repo
-          key: ${{ runner.os }}-local-p2-deploy-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-local-p2-deploy-
-            ${{ runner.os }}-local-p2-
+      # - name: Setup - Cache local p2 repository
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ./p2Repo
+      #     key: ${{ runner.os }}-local-p2-deploy-${{ hashFiles('**/pom.xml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-local-p2-deploy-
+      #       ${{ runner.os }}-local-p2-
         
       # --------------------------------------------
       # Perform various setup operations
@@ -141,8 +141,8 @@ jobs:
       # --------------------------------------------
       # Prepare p2 Repos
       # --------------------------------------------
-      - name: Build - Prepare p2 repo
-        run: mvn install -P prepare-m2e-repo -B -V
+      # - name: Build - Prepare p2 repo
+      #   run: mvn install -P prepare-m2e-repo -B -V
 
       # --------------------------------------------
       # Development and Feature branches
