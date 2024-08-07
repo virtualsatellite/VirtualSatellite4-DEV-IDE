@@ -66,7 +66,7 @@ SPDX-License-Identifier: EPL-2.0
 	<!-- =====================================================
 		 Task: updateVersion 
 	     ===================================================== -->
-	<target name="updateVersions">
+	<target name="updateVersions"> 
 
 		<!-- =====================================================
 		     Task: updateVersion - Ask for new Version String
