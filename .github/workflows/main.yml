@@ -100,34 +100,23 @@ jobs:
       # --------------------------------------------
       # Setup caching for m2 repository
       # --------------------------------------------
-      # - name: Setup - Cache local m2 repository
-      #   uses: actions/cache@v4.0.2
-      #  with:
-      #     cache-always: true
-      #     path: ~/.m2/repository/
-      #     key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-local-m2-deploy-
-      #       ${{ runner.os }}-local-m2-
+      - name: Setup - Cache local m2 and p2 repository
+        uses: actions/cache@v4.0.2
+        with:
+           save-always: true
+           path: |
+              ./p2Repo
+              ~/.m2/repository/
+           key: ${{ runner.os }}-local-m2-deploy-${{ hashFiles('**/pom.xml') }}
+           restore-keys: |
+             ${{ runner.os }}-local-m2-p2-deploy-
+             ${{ runner.os }}-local-m2-p2-
        
       - name: Setup - Clean local m2 repository
         run: |
            ls -d ~/.m2/repository/*/*/* || true
            rm -rf ~/.m2/repository/de/dlr/sc/virsat
          
-      # --------------------------------------------
-      # Setup caching for p2 repository
-      # --------------------------------------------
-      - name: Setup - Cache local p2 repository
-        uses: actions/cache@v4.0.2
-        with:
-          path: ./p2Repo
-          save-always: true
-          key: ${{ runner.os }}-local-p2-deploy-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-local-p2-deploy-
-            ${{ runner.os }}-local-p2-
-        
       # --------------------------------------------
       # Perform various setup operations
       # --------------------------------------------
