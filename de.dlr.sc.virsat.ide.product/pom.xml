@@ -38,6 +38,30 @@
 					<plugin>
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>tycho-p2-director-plugin</artifactId>
+						<executions>
+						    	<execution>
+						      	<id>create-distributions</id>
+						      	<goals>
+						        	<goal>materialize-products</goal>
+						        	<goal>archive-products</goal>
+						    	</goals>
+							</execution>
+						</executions>
+					 	<configuration>
+				            <formats>
+				              <linux>tar.gz</linux>
+				              <win32>zip</win32>
+				            </formats>
+				            <products>
+				              <product>
+				                <id>de.dlr.sc.virsat.ide.product</id>
+				                <rootFolder>eclipse</rootFolder>
+				                <archiveFileName>${build.file}</archiveFileName>
+				              </product>
+				            </products>
+			          <!--  <profile>${project.artifactId}</profile>
+			            <source>repository</source>-->
+			          	</configuration>
 					</plugin>
 
 					<plugin>

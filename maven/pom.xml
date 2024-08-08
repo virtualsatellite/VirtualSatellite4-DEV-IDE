@@ -72,6 +72,7 @@
 				<build.qualifier>'d'yyyyMMddHHmm</build.qualifier>
 				<maven.build.timestamp.format>'d'yyyyMMddHHmm</maven.build.timestamp.format>
 				<build.folder.type>development</build.folder.type>
+				<build.file>VirSat_IDE_Development</build.file>
 				<build.file.win32>VirSat_IDE_Development_Win32.zip</build.file.win32>
 				<build.file.linux>VirSat_IDE_Development_Linux.tar.gz</build.file.linux>
 				<p2.repo.virsat.id>DVLM-Tools-Feature-Development</p2.repo.virsat.id>
