@@ -80,7 +80,6 @@ jobs:
         with:
           java-version: 17
           distribution: "temurin"
-          cache: 'maven'
       
       - name: Setup - Maven 3.9.6
         uses: virtualsatellite/ci-actions/ci-maven-setup@v7
