@@ -58,8 +58,6 @@
 				                <archiveFileName>${build.file}</archiveFileName>
 				              </product>
 				            </products>
-			          <!--  <profile>${project.artifactId}</profile>
-			            <source>repository</source>-->
 			          	</configuration>
 					</plugin>
 
