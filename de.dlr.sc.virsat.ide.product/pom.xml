@@ -38,7 +38,7 @@
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>tycho-p2-director-plugin</artifactId>
 						<executions>
-						    	<execution>
+						    <execution>
 						      	<id>create-distributions</id>
 						      	<goals>
 						        	<goal>materialize-products</goal>
@@ -113,10 +113,6 @@
 											</fileset>
 										</copy>
 										
-										<!--<copy file="./target/products/*.tar.gz" toDir="${build.file.fullpath}"/>
-										<copy file="./target/products/*.*" toDir="${build.file.fullpath}"/>
--->
-										<!-- ANT Script Stop -->
 									</target>
 								</configuration>
 								<goals>
