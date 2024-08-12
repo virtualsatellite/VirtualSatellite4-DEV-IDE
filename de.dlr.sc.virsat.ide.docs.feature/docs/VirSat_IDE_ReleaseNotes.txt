@@ -1,6 +1,18 @@
 VirSat IDE Release Notes
 -------------------------
 
+Release 4.17.0  (12th August 2024)
+------------------------------------
+
+New Features:
+    Added Concept language and generators of Virtual Satellite Core 4.17.0
+    Updated to Eclipe 2024-03
+    Shipping with Java justj 21
+    Removed python feature
+    Removed m2e tycho integration
+    
+Usability Updates:
+
 
 Release 4.16.0  (31th August 2023)
 ------------------------------------
