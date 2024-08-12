@@ -8,6 +8,8 @@ New Features:
     Added Concept language and generators of Virtual Satellite Core 4.17.0
     Updated to Eclipe 2024-03
     Shipping with Java justj 21
+    Removed python feature
+    Removed m2e tycho integration
     
 Usability Updates:
 
