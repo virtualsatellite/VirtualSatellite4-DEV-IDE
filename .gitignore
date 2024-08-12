@@ -6,3 +6,5 @@
 **/*.xtendbin
 /workspace/
 /deploy/
+/apache-maven-*
+/maven.tar.gz
